@@ -8,11 +8,14 @@ public class Data {
     private static ArrayList aShareRate = new ArrayList();
     
     public static double getCurrentAShare(){
-        int i = aShareRate.lastIndexOf(aShareRate);
+        int i = aShareRate.size();
         
-        //to do: implement function
-        return 0d;
+        return (double)aShareRate.get((i-1));
         
+    }
+    
+    public static void addAShareRate(double rate){
+        aShareRate.add(rate);
     }
     
     
