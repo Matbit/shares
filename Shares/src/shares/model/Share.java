@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Share {
     
     private double marketValue;
-    private String name;
+    private final String name;
     private static ArrayList companyList = new ArrayList();
     
     public Share(){
@@ -27,7 +27,7 @@ public class Share {
         
         int firstTry = (int) (Math.random() * 8);
         
-        //check wheather company still exists
+        //check whether company still exists
         if(!companyList.isEmpty()){
             for(int saveFirst = firstTry; saveFirst==firstTry;){
                 if(companyList.contains(firstTry)){
@@ -60,6 +60,13 @@ public class Share {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * @return the marketValue
+     */
+    public double getMarketValue() {
+        return marketValue;
     }
     
     
