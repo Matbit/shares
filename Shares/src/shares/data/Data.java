@@ -15,8 +15,15 @@ public class Data {
     }
     
     public static void addAShareRate(double rate){
+        
+        if(getCurrentAShare() < 0.01){
+            return;
+        }
+        
         aShareRate.add(rate);
     }
+    
+    
     
     
 }

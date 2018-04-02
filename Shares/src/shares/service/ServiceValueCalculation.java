@@ -2,7 +2,7 @@ package shares.service;
 
 public class ServiceValueCalculation {
     
-    public static double calcNewRate(){
+    public static double calcNewRate(double oldRate){
         //factor
         int factor;
 
@@ -17,7 +17,7 @@ public class ServiceValueCalculation {
         else
             factor = -1;
         
-        return rate * factor;
+        return oldRate+(rate * factor);
         
     }
     
