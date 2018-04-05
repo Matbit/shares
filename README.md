@@ -1,2 +1,2 @@
 # Shares
-Simple game about stock holding
+Swing application about stock holding
