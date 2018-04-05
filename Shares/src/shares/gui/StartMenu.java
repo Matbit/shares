@@ -41,6 +41,13 @@ public class StartMenu extends javax.swing.JFrame {
         rbtnEnglish = new javax.swing.JRadioButton();
         rbtnGerman = new javax.swing.JRadioButton();
         lPlayer = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
+        btnStart = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        lChooseGender = new javax.swing.JLabel();
+        lEnterNickname = new javax.swing.JLabel();
+        txtfieldNick = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,23 +83,63 @@ public class StartMenu extends javax.swing.JFrame {
 
         lPlayer.setText("lPlayer");
 
+        btnExit.setText("btnExit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+
+        btnStart.setText("btnStart");
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "genderMale", "genderFemal" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jList1.setAutoscrolls(false);
+        jList1.setSelectedIndex(0);
+        jScrollPane1.setViewportView(jList1);
+
+        lChooseGender.setText("lchooseGender");
+
+        lEnterNickname.setText("lEnterNickname");
+
+        txtfieldNick.setText("Joe");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnExit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnStart)
+                .addGap(19, 19, 19))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addComponent(lWelcomeText))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGap(65, 65, 65)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rbtnEnglish)
+                                    .addComponent(llanguageChoose)
+                                    .addComponent(rbtnGerman)
+                                    .addComponent(lPlayer)
+                                    .addComponent(lEnterNickname))
+                                .addGap(97, 97, 97))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtfieldNick)
+                                .addGap(70, 70, 70)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtnEnglish)
-                            .addComponent(llanguageChoose)
-                            .addComponent(rbtnGerman)
-                            .addComponent(lPlayer))))
-                .addContainerGap(625, Short.MAX_VALUE))
+                            .addComponent(lChooseGender)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(456, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,7 +154,25 @@ public class StartMenu extends javax.swing.JFrame {
                 .addComponent(rbtnGerman)
                 .addGap(61, 61, 61)
                 .addComponent(lPlayer)
-                .addContainerGap(303, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnExit)
+                            .addComponent(btnStart))
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lEnterNickname)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtfieldNick, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lChooseGender)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(234, Short.MAX_VALUE))))
         );
 
         pack();
@@ -163,6 +228,10 @@ public class StartMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_rbtnEnglishMouseClicked
 
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -199,10 +268,17 @@ public class StartMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnStart;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lChooseGender;
+    private javax.swing.JLabel lEnterNickname;
     private javax.swing.JLabel lPlayer;
     private javax.swing.JLabel lWelcomeText;
     private javax.swing.JLabel llanguageChoose;
     private javax.swing.JRadioButton rbtnEnglish;
     private javax.swing.JRadioButton rbtnGerman;
+    private javax.swing.JTextField txtfieldNick;
     // End of variables declaration//GEN-END:variables
 }
