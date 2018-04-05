@@ -1,6 +1,8 @@
 package shares.data;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import shares.model.Player;
 import shares.model.Share;
 
 public class Data {
@@ -37,6 +39,8 @@ public class Data {
         aBankAcc.add(amount);
     }
     
+    //Player
+    public static Collection <Player> player = new ArrayList();
     
     
 }

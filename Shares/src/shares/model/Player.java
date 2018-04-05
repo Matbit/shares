@@ -8,7 +8,7 @@ public class Player {
     private final LocalDateTime start;
     private final Gender aGender;
     
-    private enum Gender{
+    public enum Gender{
     MALE, FEMALE;
     }
     

@@ -36,6 +36,7 @@ public class StartMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         lWelcomeText = new javax.swing.JLabel();
         llanguageChoose = new javax.swing.JLabel();
         rbtnEnglish = new javax.swing.JRadioButton();
@@ -48,6 +49,13 @@ public class StartMenu extends javax.swing.JFrame {
         lChooseGender = new javax.swing.JLabel();
         lEnterNickname = new javax.swing.JLabel();
         txtfieldNick = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        menuFileNewGame = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,6 +99,11 @@ public class StartMenu extends javax.swing.JFrame {
         });
 
         btnStart.setText("btnStart");
+        btnStart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStartActionPerformed(evt);
+            }
+        });
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "genderMale", "genderFemal" };
@@ -106,6 +119,21 @@ public class StartMenu extends javax.swing.JFrame {
         lEnterNickname.setText("lEnterNickname");
 
         txtfieldNick.setText("Joe");
+
+        jMenu1.setText("File");
+
+        menuFileNewGame.setText("menuFileNewGame");
+        jMenu1.add(menuFileNewGame);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("jMenu3");
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -172,7 +200,7 @@ public class StartMenu extends javax.swing.JFrame {
                                 .addComponent(lChooseGender)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(234, Short.MAX_VALUE))))
+                        .addContainerGap(213, Short.MAX_VALUE))))
         );
 
         pack();
@@ -232,6 +260,34 @@ public class StartMenu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
 
+    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
+       
+        //check data is ok
+        
+        boolean threeChars = nickCountChars();
+        if(threeChars){
+            txtfieldNick.getText().trim();
+            
+        }
+        
+        
+        
+        // init simulation and save current date and time
+        
+        
+    }//GEN-LAST:event_btnStartActionPerformed
+    
+    private boolean nickCountChars(){
+        txtfieldNick.getText().trim();
+        String nick = txtfieldNick.getText();
+        
+        if(nick.length() >= 3)
+            return true;
+        return false;
+        
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -271,12 +327,18 @@ public class StartMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnStart;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lChooseGender;
     private javax.swing.JLabel lEnterNickname;
     private javax.swing.JLabel lPlayer;
     private javax.swing.JLabel lWelcomeText;
     private javax.swing.JLabel llanguageChoose;
+    private javax.swing.JMenuItem menuFileNewGame;
     private javax.swing.JRadioButton rbtnEnglish;
     private javax.swing.JRadioButton rbtnGerman;
     private javax.swing.JTextField txtfieldNick;
