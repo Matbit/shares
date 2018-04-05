@@ -5,6 +5,7 @@ import shares.model.Share;
 
 public class Data {
     
+    //Share A rate
     private static ArrayList aShareRate = new ArrayList();
     
     public static double getCurrentAShare(){
@@ -23,6 +24,18 @@ public class Data {
         aShareRate.add(rate);
     }
     
+    //BankAcc
+    private static ArrayList aBankAcc = new ArrayList();
+    
+    public static double getCurrentBankAcc(){
+        int i = aBankAcc.size();
+        return (double) aBankAcc.get(i);
+                
+    }
+    
+    public static void addBankAcc(double amount){
+        aBankAcc.add(amount);
+    }
     
     
     

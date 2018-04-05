@@ -2,6 +2,7 @@ package shares.service;
 
 public class ServiceValueCalculation {
     
+    //calculate new share rate
     public static double calcNewRate(double oldRate){
         //factor
         int factor;
@@ -67,6 +68,5 @@ public class ServiceValueCalculation {
 	return 0d;		
     }			
     
-    
-    
+        
 }
