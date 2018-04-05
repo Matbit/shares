@@ -6,7 +6,7 @@ public class Language {
     private static final String english = "Text_en";
     private static final String german = "Text_de";
     
-    private enum aLanguage{
+    public enum aLanguage{
         ENGLISH, GERMAN;
     }
     
@@ -15,15 +15,14 @@ public class Language {
         
     }
     
-    //0 = english, 1= german
-    public static void setLanguage(int i){
-        if(i <0 || i > 1)
-            return;
+    public static void setLanguage(aLanguage choose){
+       if(choose == null)
+           return;
         
-        if(i == 0)
+        if(choose == aLanguage.ENGLISH)
             choosenLanguage = english;
         
-        if(i == 1)
+        if(choose == aLanguage.GERMAN)
             choosenLanguage = german;
     }
     

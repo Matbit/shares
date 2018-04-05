@@ -2,6 +2,7 @@ package shares.controls;
 
 import java.text.DecimalFormat;
 import shares.data.Data;
+import shares.program.settings.Language;
 import shares.service.ServiceValueCalculation;
 
 public class ControlShare {
@@ -19,7 +20,7 @@ public class ControlShare {
          ServiceValueCalculation.calcNewRate(getAShareAsDouble());
      }
      
-     
+          
      private static String formatInEuro(double d){
         DecimalFormat f = new DecimalFormat("#0.00€");
         return f.format(d);

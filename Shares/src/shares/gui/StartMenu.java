@@ -5,17 +5,26 @@
  */
 package shares.gui;
 
+import java.util.ResourceBundle;
+import shares.program.settings.Language;
+
 /**
  *
  * @author Big Boss
  */
 public class StartMenu extends javax.swing.JFrame {
-
+    
+    String baseName = Language.getLanguage();
+    ResourceBundle bundle = ResourceBundle.getBundle(baseName);
+    
+    
     /**
      * Creates new form StartMenu
      */
     public StartMenu() {
         initComponents();
+        rbtnEnglish.setSelected(true);
+        rbtnGerman.setSelected(false);
     }
 
     /**
@@ -27,22 +36,132 @@ public class StartMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lWelcomeText = new javax.swing.JLabel();
+        llanguageChoose = new javax.swing.JLabel();
+        rbtnEnglish = new javax.swing.JRadioButton();
+        rbtnGerman = new javax.swing.JRadioButton();
+        lPlayer = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+
+        lWelcomeText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lWelcomeText.setText("lWelcomeText");
+
+        llanguageChoose.setText("languageChoose");
+
+        rbtnEnglish.setSelected(true);
+        rbtnEnglish.setText("rbtnEnglish");
+        rbtnEnglish.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnEnglishMouseClicked(evt);
+            }
+        });
+        rbtnEnglish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnEnglishActionPerformed(evt);
+            }
+        });
+
+        rbtnGerman.setText("rbtnGerman");
+        rbtnGerman.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnGermanMouseClicked(evt);
+            }
+        });
+        rbtnGerman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnGermanActionPerformed(evt);
+            }
+        });
+
+        lPlayer.setText("lPlayer");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(lWelcomeText))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbtnEnglish)
+                            .addComponent(llanguageChoose)
+                            .addComponent(rbtnGerman)
+                            .addComponent(lPlayer))))
+                .addContainerGap(625, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(lWelcomeText)
+                .addGap(53, 53, 53)
+                .addComponent(llanguageChoose)
+                .addGap(18, 18, 18)
+                .addComponent(rbtnEnglish)
+                .addGap(18, 18, 18)
+                .addComponent(rbtnGerman)
+                .addGap(61, 61, 61)
+                .addComponent(lPlayer)
+                .addContainerGap(303, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rbtnEnglishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnEnglishActionPerformed
+        if(rbtnEnglish.isSelected()){
+            rbtnEnglish.setSelected(false);
+            rbtnGerman.setSelected(true);
+        }
+        else{
+            if(!rbtnEnglish.isSelected()){
+                rbtnEnglish.setSelected(true);
+                rbtnGerman.setSelected(false);
+            }
+        }
+    }//GEN-LAST:event_rbtnEnglishActionPerformed
+
+    private void rbtnGermanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnGermanActionPerformed
+       if(rbtnGerman.isSelected()){
+            rbtnEnglish.setSelected(true);
+            rbtnGerman.setSelected(false);
+        }
+        else{
+                rbtnEnglish.setSelected(false);
+                rbtnGerman.setSelected(true);
+            
+        }
+    }//GEN-LAST:event_rbtnGermanActionPerformed
+
+    private void rbtnGermanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnGermanMouseClicked
+       if(rbtnGerman.isSelected()){
+            rbtnEnglish.setSelected(true);
+            rbtnGerman.setSelected(false);
+        }
+        else{
+                rbtnEnglish.setSelected(false);
+                rbtnGerman.setSelected(true);
+            
+        }
+    }//GEN-LAST:event_rbtnGermanMouseClicked
+
+    private void rbtnEnglishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnEnglishMouseClicked
+        if(rbtnEnglish.isSelected()){
+            rbtnEnglish.setSelected(false);
+            rbtnGerman.setSelected(true);
+        }
+        else{
+            if(!rbtnEnglish.isSelected()){
+                rbtnEnglish.setSelected(true);
+                rbtnGerman.setSelected(false);
+            }
+        }
+    }//GEN-LAST:event_rbtnEnglishMouseClicked
 
     /**
      * @param args the command line arguments
@@ -80,5 +199,10 @@ public class StartMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lPlayer;
+    private javax.swing.JLabel lWelcomeText;
+    private javax.swing.JLabel llanguageChoose;
+    private javax.swing.JRadioButton rbtnEnglish;
+    private javax.swing.JRadioButton rbtnGerman;
     // End of variables declaration//GEN-END:variables
 }
