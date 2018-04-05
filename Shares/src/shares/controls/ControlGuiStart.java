@@ -1,5 +1,6 @@
 package shares.controls;
 
+import shares.data.Data;
 import shares.model.Player;
 import shares.model.Player.Gender;
 
@@ -13,6 +14,7 @@ public class ControlGuiStart {
             playersGender = Gender.FEMALE;
         
         Player player = new Player(nick, playersGender);
+        Data.player.add(player);
         
         
     }

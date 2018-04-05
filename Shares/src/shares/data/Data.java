@@ -40,7 +40,13 @@ public class Data {
     }
     
     //Player
-    public static Collection <Player> player = new ArrayList();
+    private static Collection <Player> player = new ArrayList();
     
+    public static void addPlayer(Player aPlayer){
+        player.add(aPlayer);
+    }
     
+    public static void getAPlayer(){
+       // TO DO: get Player!!
+    }
 }
