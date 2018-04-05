@@ -4,39 +4,39 @@ import java.time.LocalDateTime;
 
 public class Player {
     
-    private final String nickname;
-    private final LocalDateTime start;
-    private final Gender aGender;
+    private final String NICKNAME;
+    private final LocalDateTime START;
+    private final Gender AGENDER;
     
     public enum Gender{
     MALE, FEMALE;
     }
     
     public Player(String nickname,Gender aGender){
-        this.nickname = nickname;
-        this.aGender = aGender;
-        start = LocalDateTime.now();
+        this.NICKNAME = nickname;
+        this.AGENDER = aGender;
+        START = LocalDateTime.now();
     }
 
     /**
      * @return the nickname
      */
     public String getNickname() {
-        return nickname;
+        return NICKNAME;
     }
 
     /**
      * @return the start
      */
     public LocalDateTime getStart() {
-        return start;
+        return START;
     }
 
     /**
      * @return the aGender
      */
     public Gender getGender() {
-        return aGender;
+        return AGENDER;
     }
     
     

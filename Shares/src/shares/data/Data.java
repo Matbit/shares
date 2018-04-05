@@ -2,6 +2,7 @@ package shares.data;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import shares.model.Player;
 import shares.model.Share;
 
@@ -40,13 +41,13 @@ public class Data {
     }
     
     //Player
-    private static Collection <Player> player = new ArrayList();
+    private static List <Player> listPlayer = new ArrayList();
     
     public static void addPlayer(Player aPlayer){
-        player.add(aPlayer);
+        listPlayer.add(aPlayer);
     }
     
-    public static void getAPlayer(){
-       // TO DO: get Player!!
+    public static Player getAPlayer(){
+       return listPlayer.get(0);
     }
 }

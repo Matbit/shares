@@ -14,7 +14,7 @@ public class ControlGuiStart {
             playersGender = Gender.FEMALE;
         
         Player player = new Player(nick, playersGender);
-        Data.player.add(player);
+        Data.addPlayer(player);
         
         
     }
