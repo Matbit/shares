@@ -20,12 +20,29 @@ public class Data {
     
     public static void addAShareRate(double rate){
         
-        if(getCurrentAShare() < 0.01){
+        if(!aShareRate.isEmpty()){
+        
+            if(getCurrentAShare() < 0.01){
             return;
+            }
         }
         
         aShareRate.add(rate);
     }
+    
+    private static String companyName;
+    
+     
+    public static String getCompanyName() {
+        return companyName;
+    }
+
+   
+    public static void setCompanyName(String aCompanyName) {
+        companyName = aCompanyName;
+    }
+    
+    
     
     //BankAcc
     private static ArrayList aBankAcc = new ArrayList();
@@ -50,4 +67,8 @@ public class Data {
     public static Player getAPlayer(){
        return listPlayer.get(0);
     }
+
+   
+    
+    
 }

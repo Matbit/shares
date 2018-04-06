@@ -3,6 +3,7 @@ package shares.controls;
 import shares.data.Data;
 import shares.model.Player;
 import shares.model.Player.Gender;
+import shares.model.Share;
 
 public class ControlGuiStart {
     
@@ -15,8 +16,16 @@ public class ControlGuiStart {
         
         Player player = new Player(nick, playersGender);
         Data.addPlayer(player);
-        System.out.println(Data.getAPlayer().getNickname() + Data.getAPlayer().getGender());
         
+        //delete when development is finish
+        System.out.println(Data.getAPlayer().getNickname() + Data.getAPlayer().getGender());
+    }
+    
+    public static void createShares(){
+        Share aNew = new Share();
+        Data.setCompanyName(aNew.getName());
+        Data.addAShareRate(aNew.getMarketValue());
+        System.out.println("share ok..");
         
     }
 }

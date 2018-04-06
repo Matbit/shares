@@ -279,6 +279,9 @@ public class StartMenu extends javax.swing.JFrame {
         // init simulation and save current date and time
         ControlGuiStart.createPlayer(nick, gender);
         
+        //init shares
+        ControlGuiStart.createShares();
+        
         //close window
         this.setVisible(false);
         //open gui simulation
