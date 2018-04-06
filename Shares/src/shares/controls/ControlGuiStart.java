@@ -15,6 +15,7 @@ public class ControlGuiStart {
         
         Player player = new Player(nick, playersGender);
         Data.addPlayer(player);
+        System.out.println(Data.getAPlayer().getNickname() + Data.getAPlayer().getGender());
         
         
     }

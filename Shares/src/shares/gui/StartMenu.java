@@ -6,6 +6,7 @@
 package shares.gui;
 
 import java.util.ResourceBundle;
+import shares.controls.ControlGuiStart;
 import shares.program.settings.Language;
 
 /**
@@ -45,7 +46,7 @@ public class StartMenu extends javax.swing.JFrame {
         btnExit = new javax.swing.JButton();
         btnStart = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listbxGender = new javax.swing.JList<>();
         lChooseGender = new javax.swing.JLabel();
         lEnterNickname = new javax.swing.JLabel();
         txtfieldNick = new javax.swing.JTextField();
@@ -105,14 +106,14 @@ public class StartMenu extends javax.swing.JFrame {
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listbxGender.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "genderMale", "genderFemal" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList1.setAutoscrolls(false);
-        jList1.setSelectedIndex(0);
-        jScrollPane1.setViewportView(jList1);
+        listbxGender.setAutoscrolls(false);
+        listbxGender.setSelectedIndex(0);
+        jScrollPane1.setViewportView(listbxGender);
 
         lChooseGender.setText("lchooseGender");
 
@@ -182,7 +183,6 @@ public class StartMenu extends javax.swing.JFrame {
                 .addComponent(rbtnGerman)
                 .addGap(61, 61, 61)
                 .addComponent(lPlayer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -261,18 +261,26 @@ public class StartMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
-       
-        //check data is ok
-        
+        String nick = "";
+        int gender = -1;
+        //check data is ok        
         boolean threeChars = nickCountChars();
         if(threeChars){
-            txtfieldNick.getText().trim();
+        nick = txtfieldNick.getText().trim();
+        
+        
+        //0 = male - 1= female
+        if(listbxGender.isSelectedIndex(0))
+            gender = 0;
+        else gender = 1;
             
         }
         
-        
-        
         // init simulation and save current date and time
+        ControlGuiStart.createPlayer(nick, gender);
+        
+        //close window
+        this.setVisible(false);
         
         
     }//GEN-LAST:event_btnStartActionPerformed
@@ -326,7 +334,6 @@ public class StartMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnStart;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -337,6 +344,7 @@ public class StartMenu extends javax.swing.JFrame {
     private javax.swing.JLabel lEnterNickname;
     private javax.swing.JLabel lPlayer;
     private javax.swing.JLabel lWelcomeText;
+    private javax.swing.JList<String> listbxGender;
     private javax.swing.JLabel llanguageChoose;
     private javax.swing.JMenuItem menuFileNewGame;
     private javax.swing.JRadioButton rbtnEnglish;
