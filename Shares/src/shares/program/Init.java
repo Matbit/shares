@@ -11,9 +11,7 @@ class Init {
         
         String baseName = Language.getLanguage();
         ResourceBundle bundle = ResourceBundle.getBundle(baseName);
-        
-        
-                
+               
         StartMenu start = new StartMenu();
         start.setTitle(bundle.getString("title"));
         start.setVisible(true);

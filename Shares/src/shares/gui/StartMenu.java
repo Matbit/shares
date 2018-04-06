@@ -5,6 +5,7 @@
  */
 package shares.gui;
 
+import java.awt.Color;
 import java.util.ResourceBundle;
 import shares.controls.ControlGuiStart;
 import shares.program.settings.Language;
@@ -269,7 +270,7 @@ public class StartMenu extends javax.swing.JFrame {
         nick = txtfieldNick.getText().trim();
         
         
-        //0 = male - 1= female
+        //0 = male / 1= female
         if(listbxGender.isSelectedIndex(0))
             gender = 0;
         else gender = 1;
