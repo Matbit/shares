@@ -281,6 +281,9 @@ public class StartMenu extends javax.swing.JFrame {
         
         //close window
         this.setVisible(false);
+        //open gui simulation
+        ShareSimulation sim = new ShareSimulation();
+        sim.setVisible(true);
         
         
     }//GEN-LAST:event_btnStartActionPerformed
