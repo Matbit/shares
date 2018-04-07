@@ -14,6 +14,7 @@ class Init {
                
         StartMenu start = new StartMenu();
         start.setTitle(bundle.getString("title"));
+        start.setLocationRelativeTo(null);
         start.setVisible(true);
         
     }
