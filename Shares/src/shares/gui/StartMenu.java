@@ -5,7 +5,6 @@
  */
 package shares.gui;
 
-import java.awt.Color;
 import java.util.ResourceBundle;
 import shares.controls.ControlGuiStart;
 import shares.program.settings.Language;
@@ -292,10 +291,10 @@ public class StartMenu extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnStartActionPerformed
-    
+    //nickname has to be longer than two chars
     private boolean nickCountChars(){
-        txtfieldNick.getText().trim();
-        String nick = txtfieldNick.getText();
+        
+        String nick = txtfieldNick.getText().trim();
         
         if(nick.length() >= 3)
             return true;
