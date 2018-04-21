@@ -27,20 +27,26 @@ public class StartMenu extends javax.swing.JFrame {
         lmGender.addElement(bundle.getString("genderMale"));
         lmGender.addElement(bundle.getString("genderFemale"));
         listbxGender.setModel(lmGender);
+        setLanguage();
         
     }
     
     private void setLanguage(){
+        baseName= Language.getLanguage();
+        bundle = ResourceBundle.getBundle(baseName);
+        
         lWelcomeText.setText(bundle.getString("lWelcomeText"));
         llanguageChoose.setText(bundle.getString("lChooseLanguage"));
         rbtnEnglish.setText(bundle.getString("rbtnEnglishText"));
         rbtnGerman.setText(bundle.getString("rbtnGermanText"));
         lPlayer.setText(bundle.getString("lPlayer"));
-        lEnterNickname.setText(bundle.getString("lEnterNickName"));
+        lEnterNickname.setText(bundle.getString("lEnterNickname"));
         lChooseGender.setText(bundle.getString("lChooseGender"));
         lmGender.setElementAt((bundle.getString("genderMale")),0);
         lmGender.setElementAt((bundle.getString("genderFemale")),1);
-        //lmGender.
+        btnExit.setText(bundle.getString("btnExit"));
+        btnStart.setText(bundle.getString("btnStart"));
+       
         
         
         
@@ -109,6 +115,7 @@ public class StartMenu extends javax.swing.JFrame {
             }
         });
 
+        lPlayer.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lPlayer.setText("lPlayer");
 
         btnExit.setText("btnExit");
@@ -154,34 +161,30 @@ public class StartMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnExit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnStart)
-                .addGap(19, 19, 19))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addComponent(lWelcomeText))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(65, 65, 65)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rbtnEnglish)
                                     .addComponent(llanguageChoose)
                                     .addComponent(rbtnGerman)
                                     .addComponent(lPlayer)
-                                    .addComponent(lEnterNickname))
-                                .addGap(97, 97, 97))
+                                    .addComponent(lEnterNickname)
+                                    .addComponent(txtfieldNick, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(62, 62, 62)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lChooseGender)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtfieldNick)
-                                .addGap(70, 70, 70)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lChooseGender)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(456, Short.MAX_VALUE))
+                                .addComponent(btnExit)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
+                                .addComponent(btnStart)))))
+                .addGap(74, 74, 74))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,30 +193,26 @@ public class StartMenu extends javax.swing.JFrame {
                 .addComponent(lWelcomeText)
                 .addGap(53, 53, 53)
                 .addComponent(llanguageChoose)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbtnEnglish)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbtnGerman)
-                .addGap(61, 61, 61)
+                .addGap(29, 29, 29)
                 .addComponent(lPlayer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lEnterNickname)
+                    .addComponent(lChooseGender))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtfieldNick, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnExit)
-                            .addComponent(btnStart))
-                        .addGap(20, 20, 20))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lEnterNickname)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtfieldNick, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lChooseGender)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(213, Short.MAX_VALUE))))
+                            .addComponent(btnStart)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -223,50 +222,72 @@ public class StartMenu extends javax.swing.JFrame {
         if(rbtnEnglish.isSelected()){
             rbtnEnglish.setSelected(false);
             rbtnGerman.setSelected(true);
+            Language.setLanguage(Language.aLanguage.GERMAN);
+            
         }
         else{
             if(!rbtnEnglish.isSelected()){
                 rbtnEnglish.setSelected(true);
                 rbtnGerman.setSelected(false);
+                Language.setLanguage(Language.aLanguage.ENGLISH);
+                
             }
         }
+        setLanguage();
     }//GEN-LAST:event_rbtnEnglishActionPerformed
 
     private void rbtnGermanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnGermanActionPerformed
        if(rbtnGerman.isSelected()){
             rbtnEnglish.setSelected(true);
             rbtnGerman.setSelected(false);
+            Language.setLanguage(Language.aLanguage.ENGLISH);
+            
         }
         else{
                 rbtnEnglish.setSelected(false);
                 rbtnGerman.setSelected(true);
+                Language.setLanguage(Language.aLanguage.GERMAN);
+                
             
         }
+       setLanguage();
     }//GEN-LAST:event_rbtnGermanActionPerformed
 
     private void rbtnGermanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnGermanMouseClicked
        if(rbtnGerman.isSelected()){
             rbtnEnglish.setSelected(true);
             rbtnGerman.setSelected(false);
+            Language.setLanguage(Language.aLanguage.ENGLISH);
+            
         }
         else{
                 rbtnEnglish.setSelected(false);
                 rbtnGerman.setSelected(true);
+                Language.setLanguage(Language.aLanguage.GERMAN);
+                
             
         }
+       setLanguage();
+        
     }//GEN-LAST:event_rbtnGermanMouseClicked
 
     private void rbtnEnglishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnEnglishMouseClicked
         if(rbtnEnglish.isSelected()){
             rbtnEnglish.setSelected(false);
             rbtnGerman.setSelected(true);
+            Language.setLanguage(Language.aLanguage.GERMAN);
+            
         }
         else{
             if(!rbtnEnglish.isSelected()){
                 rbtnEnglish.setSelected(true);
                 rbtnGerman.setSelected(false);
+                Language.setLanguage(Language.aLanguage.ENGLISH);
+                
             }
         }
+        setLanguage();
+        
     }//GEN-LAST:event_rbtnEnglishMouseClicked
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed

@@ -24,6 +24,8 @@ public class Language {
         
         if(choose == aLanguage.GERMAN)
             choosenLanguage = german;
+        
+        System.out.println(choosenLanguage);
     }
     
     public static String getLanguage(){
