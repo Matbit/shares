@@ -16,7 +16,7 @@ import shares.program.settings.Language;
 public class StartMenu extends javax.swing.JFrame {
     
     String baseName = Language.getLanguage();
-    ResourceBundle bundle = ResourceBundle.getBundle(baseName);
+   // ResourceBundle bundle = ResourceBundle.getBundle(baseName);
     
     
     /**
