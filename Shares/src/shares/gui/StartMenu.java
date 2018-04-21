@@ -1,9 +1,7 @@
 package shares.gui;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import javax.swing.ListModel;
+import javax.swing.DefaultListModel;
 import shares.controls.ControlGuiStart;
 import shares.program.settings.Language;
 
@@ -12,12 +10,10 @@ public class StartMenu extends javax.swing.JFrame {
     
     String baseName;
     ResourceBundle bundle;
-    ListModel<String> lm1;
-    List<String> lm2 = new ArrayList();
+    DefaultListModel lmGender = new DefaultListModel();
     
     
-    
-    
+     
     
     /**
      * Creates new form StartMenu
@@ -28,6 +24,9 @@ public class StartMenu extends javax.swing.JFrame {
         initComponents();
         rbtnEnglish.setSelected(true);
         rbtnGerman.setSelected(false);
+        lmGender.addElement(bundle.getString("genderMale"));
+        lmGender.addElement(bundle.getString("genderFemale"));
+        listbxGender.setModel(lmGender);
         
     }
     
@@ -39,8 +38,11 @@ public class StartMenu extends javax.swing.JFrame {
         lPlayer.setText(bundle.getString("lPlayer"));
         lEnterNickname.setText(bundle.getString("lEnterNickName"));
         lChooseGender.setText(bundle.getString("lChooseGender"));
-        //listbxGender.setModel();
-        //(bundle.getString("listbxMale"));
+        lmGender.setElementAt((bundle.getString("genderMale")),0);
+        lmGender.setElementAt((bundle.getString("genderFemale")),1);
+        //lmGender.
+        
+        
         
         
     }
@@ -123,13 +125,7 @@ public class StartMenu extends javax.swing.JFrame {
             }
         });
 
-        listbxGender.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "genderMale", "genderFemal" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listbxGender.setAutoscrolls(false);
-        listbxGender.setSelectedIndex(0);
         jScrollPane1.setViewportView(listbxGender);
 
         lChooseGender.setText("lchooseGender");
