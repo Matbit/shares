@@ -1,31 +1,48 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package shares.gui;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javax.swing.ListModel;
 import shares.controls.ControlGuiStart;
 import shares.program.settings.Language;
 
-/**
- *
- * @author Big Boss
- */
+
 public class StartMenu extends javax.swing.JFrame {
     
-    String baseName = Language.getLanguage();
-   // ResourceBundle bundle = ResourceBundle.getBundle(baseName);
+    String baseName;
+    ResourceBundle bundle;
+    ListModel<String> lm1;
+    List<String> lm2 = new ArrayList();
+    
+    
+    
     
     
     /**
      * Creates new form StartMenu
      */
     public StartMenu() {
+        baseName = Language.getLanguage();
+        bundle = ResourceBundle.getBundle(baseName);
         initComponents();
         rbtnEnglish.setSelected(true);
         rbtnGerman.setSelected(false);
+        
+    }
+    
+    private void setLanguage(){
+        lWelcomeText.setText(bundle.getString("lWelcomeText"));
+        llanguageChoose.setText(bundle.getString("lChooseLanguage"));
+        rbtnEnglish.setText(bundle.getString("rbtnEnglishText"));
+        rbtnGerman.setText(bundle.getString("rbtnGermanText"));
+        lPlayer.setText(bundle.getString("lPlayer"));
+        lEnterNickname.setText(bundle.getString("lEnterNickName"));
+        lChooseGender.setText(bundle.getString("lChooseGender"));
+        //listbxGender.setModel();
+        //(bundle.getString("listbxMale"));
+        
+        
     }
 
     /**
