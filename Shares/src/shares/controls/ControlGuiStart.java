@@ -28,4 +28,6 @@ public class ControlGuiStart {
         System.out.println("share ok..");
         
     }
+    
+    //public static bool 
 }

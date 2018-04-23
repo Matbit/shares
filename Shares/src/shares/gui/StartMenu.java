@@ -22,12 +22,14 @@ public class StartMenu extends javax.swing.JFrame {
         baseName = Language.getLanguage();
         bundle = ResourceBundle.getBundle(baseName);
         initComponents();
+        lException.setVisible(false);
         rbtnEnglish.setSelected(true);
         rbtnGerman.setSelected(false);
         lmGender.addElement(bundle.getString("genderMale"));
         lmGender.addElement(bundle.getString("genderFemale"));
         listbxGender.setModel(lmGender);
         setLanguage();
+        
         
     }
     
@@ -46,6 +48,7 @@ public class StartMenu extends javax.swing.JFrame {
         lmGender.setElementAt((bundle.getString("genderFemale")),1);
         btnExit.setText(bundle.getString("btnExit"));
         btnStart.setText(bundle.getString("btnStart"));
+        lException.setText(bundle.getString("lException3"));
        
         
         
@@ -75,6 +78,7 @@ public class StartMenu extends javax.swing.JFrame {
         lChooseGender = new javax.swing.JLabel();
         lEnterNickname = new javax.swing.JLabel();
         txtfieldNick = new javax.swing.JTextField();
+        lException = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuFileNewGame = new javax.swing.JMenuItem();
@@ -141,6 +145,9 @@ public class StartMenu extends javax.swing.JFrame {
 
         txtfieldNick.setText("Joe");
 
+        lException.setForeground(new java.awt.Color(204, 0, 0));
+        lException.setText("lException");
+
         jMenu1.setText("File");
 
         menuFileNewGame.setText("menuFileNewGame");
@@ -163,9 +170,6 @@ public class StartMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(lWelcomeText))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -183,7 +187,13 @@ public class StartMenu extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnExit)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
-                                .addComponent(btnStart)))))
+                                .addComponent(btnStart))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lException)
+                            .addComponent(lWelcomeText))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(74, 74, 74))
         );
         layout.setVerticalGroup(
@@ -191,7 +201,9 @@ public class StartMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(lWelcomeText)
-                .addGap(53, 53, 53)
+                .addGap(18, 18, 18)
+                .addComponent(lException)
+                .addGap(21, 21, 21)
                 .addComponent(llanguageChoose)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbtnEnglish)
@@ -301,13 +313,17 @@ public class StartMenu extends javax.swing.JFrame {
         boolean threeChars = nickCountChars();
         if(threeChars){
         nick = txtfieldNick.getText().trim();
-        
-        
+                
         //0 = male / 1= female
         if(listbxGender.isSelectedIndex(0))
             gender = 0;
         else gender = 1;
             
+        }
+        else{
+            lException.setText(bundle.getString("lException3"));
+            lException.setVisible(true);
+            return;
         }
         
         // init simulation and save current date and time
@@ -383,6 +399,7 @@ public class StartMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lChooseGender;
     private javax.swing.JLabel lEnterNickname;
+    private javax.swing.JLabel lException;
     private javax.swing.JLabel lPlayer;
     private javax.swing.JLabel lWelcomeText;
     private javax.swing.JList<String> listbxGender;

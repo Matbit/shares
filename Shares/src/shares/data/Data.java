@@ -1,10 +1,10 @@
 package shares.data;
 
 import java.util.ArrayList;
-import java.util.Collection;
+//import java.util.Collection;
 import java.util.List;
 import shares.model.Player;
-import shares.model.Share;
+//import shares.model.Share;
 
 public class Data {
     
