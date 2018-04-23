@@ -22,6 +22,10 @@ public class ControlBank {
         return formatInEuro(ServiceBankAcc.calcCurrentPortfolio());
     }
     
+    public static String getCurrentShareARate(){
+        return formatInEuro(Data.getCurrentAShare());
+    }
+    
     
     
     private static String formatInEuro(double d){

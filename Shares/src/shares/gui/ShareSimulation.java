@@ -21,6 +21,8 @@ public class ShareSimulation extends javax.swing.JFrame {
         lBankAccValue.setText(ControlBank.getBankAcc());
         lCompanyName.setText(ControlGuiSimulation.getCompanyName());
         lPortfolioValue.setText(ControlBank.getCurrentPortfolio());
+        lCountAValue.setText(ControlGuiSimulation.getHoldShareA());
+        lShowRate.setText(ControlBank.getCurrentShareARate());
         
     }
     
@@ -72,6 +74,7 @@ public class ShareSimulation extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         btnAbort = new javax.swing.JButton();
         lCountA = new javax.swing.JLabel();
+        lCountAValue = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -179,6 +182,9 @@ public class ShareSimulation extends javax.swing.JFrame {
         lCountA.setForeground(new java.awt.Color(0, 102, 204));
         lCountA.setText("lCountA:");
 
+        lCountAValue.setForeground(new java.awt.Color(51, 102, 255));
+        lCountAValue.setText("jLabel1");
+
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
@@ -224,11 +230,12 @@ public class ShareSimulation extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(81, 81, 81)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lCountA)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lRate)
-                                        .addGap(43, 43, 43)
-                                        .addComponent(lShowRate)))))
+                                    .addComponent(lRate)
+                                    .addComponent(lCountA))
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lCountAValue)
+                                    .addComponent(lShowRate))))
                         .addContainerGap(216, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,7 +271,9 @@ public class ShareSimulation extends javax.swing.JFrame {
                             .addComponent(lRate)
                             .addComponent(lShowRate))
                         .addGap(18, 18, 18)
-                        .addComponent(lCountA)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lCountA)
+                            .addComponent(lCountAValue))
                         .addGap(14, 14, 14)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -354,6 +363,7 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JLabel lBankAccValue;
     private javax.swing.JLabel lCompanyName;
     private javax.swing.JLabel lCountA;
+    private javax.swing.JLabel lCountAValue;
     private javax.swing.JLabel lPortfolio;
     private javax.swing.JLabel lPortfolioValue;
     private javax.swing.JLabel lRate;

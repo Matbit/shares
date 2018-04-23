@@ -8,4 +8,9 @@ public class ControlGuiSimulation {
         return Data.getCompanyName();
     }
     
+    public static String getHoldShareA(){
+        return Data.getCurrentHoldShareA()+"";
+    }
+    
+       
 }

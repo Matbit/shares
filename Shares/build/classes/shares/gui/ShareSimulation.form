@@ -89,12 +89,13 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lCountA" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="lRate" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                      <Component id="lShowRate" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="lRate" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lCountA" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lCountAValue" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lShowRate" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -144,7 +145,10 @@
                           <Component id="lShowRate" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="lCountA" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lCountA" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lCountAValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -413,6 +417,14 @@
           <Color blue="cc" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="lCountA:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lCountAValue">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="66" red="33" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
   </SubComponents>
