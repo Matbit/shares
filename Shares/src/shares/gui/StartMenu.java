@@ -28,6 +28,7 @@ public class StartMenu extends javax.swing.JFrame {
         lmGender.addElement(bundle.getString("genderMale"));
         lmGender.addElement(bundle.getString("genderFemale"));
         listbxGender.setModel(lmGender);
+        listbxGender.setSelectedIndex(0);
         setLanguage();
         
         

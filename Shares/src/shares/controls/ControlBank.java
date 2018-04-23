@@ -18,6 +18,12 @@ public class ControlBank {
         Data.addBankAcc(newBankAcc);
     }
     
+    public static String getCurrentPortfolio(){
+        return formatInEuro(ServiceBankAcc.calcCurrentPortfolio());
+    }
+    
+    
+    
     private static String formatInEuro(double d){
         DecimalFormat f = new DecimalFormat("#0.00€");
         return f.format(d);

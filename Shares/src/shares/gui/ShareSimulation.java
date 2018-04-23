@@ -2,6 +2,8 @@ package shares.gui;
 
 import java.awt.Color;
 import java.util.ResourceBundle;
+import shares.controls.ControlBank;
+import shares.controls.ControlGuiSimulation;
 import shares.program.settings.Language;
 
 public class ShareSimulation extends javax.swing.JFrame {
@@ -16,6 +18,9 @@ public class ShareSimulation extends javax.swing.JFrame {
         initComponents();
         this.setTitle(bundle.getString("title"));
         setLanguage();
+        lBankAccValue.setText(ControlBank.getBankAcc());
+        lCompanyName.setText(ControlGuiSimulation.getCompanyName());
+        lPortfolioValue.setText(ControlBank.getCurrentPortfolio());
         
     }
     
@@ -50,8 +55,8 @@ public class ShareSimulation extends javax.swing.JFrame {
         btnNextRound = new javax.swing.JButton();
         lBankAcc = new javax.swing.JLabel();
         lPortfolio = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lBankAccValue = new javax.swing.JLabel();
+        lPortfolioValue = new javax.swing.JLabel();
         lCompanyName = new javax.swing.JLabel();
         lRate = new javax.swing.JLabel();
         lShowRate = new javax.swing.JLabel();
@@ -83,11 +88,11 @@ public class ShareSimulation extends javax.swing.JFrame {
         lPortfolio.setForeground(new java.awt.Color(51, 102, 255));
         lPortfolio.setText("Portfolio:");
 
-        jLabel1.setForeground(new java.awt.Color(51, 102, 255));
-        jLabel1.setText("5000,00 €");
+        lBankAccValue.setForeground(new java.awt.Color(51, 102, 255));
+        lBankAccValue.setText("5000,00 €");
 
-        jLabel2.setForeground(new java.awt.Color(51, 102, 255));
-        jLabel2.setText("1500,00 €");
+        lPortfolioValue.setForeground(new java.awt.Color(51, 102, 255));
+        lPortfolioValue.setText("1500,00 €");
 
         lCompanyName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lCompanyName.setForeground(new java.awt.Color(51, 102, 255));
@@ -195,8 +200,8 @@ public class ShareSimulation extends javax.swing.JFrame {
                             .addComponent(lPortfolio))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)))
+                            .addComponent(lBankAccValue)
+                            .addComponent(lPortfolioValue)))
                     .addComponent(btnAbort, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,12 +255,12 @@ public class ShareSimulation extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lBankAcc)
-                            .addComponent(jLabel1)
+                            .addComponent(lBankAccValue)
                             .addComponent(lCompanyName))
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lPortfolio)
-                            .addComponent(jLabel2)
+                            .addComponent(lPortfolioValue)
                             .addComponent(lRate)
                             .addComponent(lShowRate))
                         .addGap(18, 18, 18)
@@ -336,8 +341,6 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JButton btnBuy;
     private javax.swing.JButton btnNextRound;
     private javax.swing.JButton btnSell;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -348,9 +351,11 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lBankAcc;
+    private javax.swing.JLabel lBankAccValue;
     private javax.swing.JLabel lCompanyName;
     private javax.swing.JLabel lCountA;
     private javax.swing.JLabel lPortfolio;
+    private javax.swing.JLabel lPortfolioValue;
     private javax.swing.JLabel lRate;
     private javax.swing.JLabel lShowRate;
     private javax.swing.JLabel lSpecific;

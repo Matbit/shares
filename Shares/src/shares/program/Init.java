@@ -1,9 +1,11 @@
 package shares.program;
 
-import java.io.IOException;
-import shares.program.settings.Language;
+//import java.io.IOException;
+//import shares.program.settings.Language;
 import shares.gui.StartMenu;
 import java.util.*;
+import shares.data.Data;
+import shares.data.StartValues;
 import shares.program.settings.Language;
 
 class Init {
@@ -17,6 +19,10 @@ class Init {
         start.setTitle(bundle.getString("title"));
         start.setLocationRelativeTo(null);
         start.setVisible(true);
+        Data.addBankAcc(StartValues.getStartCapital());
+        Data.addCountShareA(StartValues.getHolding());
+        
+        
         
     }
 }

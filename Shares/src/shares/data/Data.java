@@ -49,7 +49,7 @@ public class Data {
     
     public static double getCurrentBankAcc(){
         int i = aBankAcc.size();
-        return (double) aBankAcc.get(i);
+        return (double) aBankAcc.get((i-1));
                 
     }
     
@@ -67,8 +67,17 @@ public class Data {
     public static Player getAPlayer(){
        return listPlayer.get(0);
     }
-
-   
     
+    //count how many Share A shares were bought
+    private static ArrayList holdShareA = new ArrayList();
+    
+    public static int getCurrentHoldShareA(){
+        int i = holdShareA.size();
+        return (int) holdShareA.get((i-1));
+    }
+    
+    public static void addCountShareA(int count){
+        holdShareA.add(count);
+    }
     
 }

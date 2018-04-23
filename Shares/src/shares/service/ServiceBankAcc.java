@@ -11,5 +11,12 @@ public class ServiceBankAcc {
         return old + amount;        
     }
     
+    public static double calcCurrentPortfolio(){
+        double rate = Data.getCurrentAShare();
+        double holding = Data.getCurrentHoldShareA();
+        
+        return rate * holding;
+    }
+    
     
 }
