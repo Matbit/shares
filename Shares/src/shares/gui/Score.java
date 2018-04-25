@@ -1,7 +1,6 @@
 
 package shares.gui;
 
-import java.awt.Color;
 import java.util.ResourceBundle;
 import shares.controls.ControlGuiScore;
 import shares.program.settings.Language;
@@ -24,6 +23,7 @@ public class Score extends javax.swing.JFrame {
         bundle = ResourceBundle.getBundle(baseName);
         
         lScore.setText(bundle.getString("lScore"));
+        btnExit.setText(bundle.getString("btnExit"));
     }
     
     private void setStatistics(){
@@ -33,6 +33,8 @@ public class Score extends javax.swing.JFrame {
         txtAreaScores.append(bundle.getString("txtEndCapital")+ " "+ControlGuiScore.getEndCapital());
         txtAreaScores.append("\n");
         txtAreaScores.append(bundle.getString("txtDiff")+ " "+ ControlGuiScore.getDiffFortune());
+        txtAreaScores.append("\n");
+        txtAreaScores.append(bundle.getString("txtProcent")+ " "+ControlGuiScore.getProcentProfit());
         txtAreaScores.append("\n");
         
         
@@ -55,6 +57,7 @@ public class Score extends javax.swing.JFrame {
         lScore = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaScores = new javax.swing.JTextArea();
+        btnExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -71,6 +74,13 @@ public class Score extends javax.swing.JFrame {
         txtAreaScores.setAutoscrolls(false);
         txtAreaScores.setEnabled(false);
         jScrollPane1.setViewportView(txtAreaScores);
+
+        btnExit.setText("btnExit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -90,6 +100,10 @@ public class Score extends javax.swing.JFrame {
                     .addComponent(lScore, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(76, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnExit)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,11 +112,17 @@ public class Score extends javax.swing.JFrame {
                 .addComponent(lScore)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
+                .addGap(24, 24, 24)
+                .addComponent(btnExit)
+                .addContainerGap())
         );
 
         setBounds(0, 0, 450, 397);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,6 +160,7 @@ public class Score extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExit;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

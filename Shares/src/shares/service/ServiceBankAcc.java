@@ -26,5 +26,11 @@ public class ServiceBankAcc {
         return getTotalFortune() - Data.getSelectedBankAcc(0); 
     }
     
+    public static double getProcentTotal(){
+        double start = Data.getSelectedBankAcc(0);
+        double end = getDiffFortune();
+        return (end*100/start)/100;
+    }
+    
     
 }
