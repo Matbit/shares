@@ -207,6 +207,11 @@ public class ShareSimulation extends javax.swing.JFrame {
 
         btnAbort.setForeground(new java.awt.Color(0, 102, 255));
         btnAbort.setText("btnAbort");
+        btnAbort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbortActionPerformed(evt);
+            }
+        });
 
         lCountA.setForeground(new java.awt.Color(0, 102, 255));
         lCountA.setText("lCountA:");
@@ -387,6 +392,13 @@ public class ShareSimulation extends javax.swing.JFrame {
         ControlGuiSimulation.newRound();
         refreshData();
     }//GEN-LAST:event_btnNextRoundActionPerformed
+
+    private void btnAbortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbortActionPerformed
+        Score score = new Score();
+        score.setLocationRelativeTo(null);
+        score.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAbortActionPerformed
 
     /**
      * @param args the command line arguments

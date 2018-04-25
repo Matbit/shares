@@ -61,6 +61,10 @@ public class Data {
         aBankAcc.add(amount);
     }
     
+    public static double getSelectedBankAcc(int index){
+        return (double)aBankAcc.get(index);
+    }
+    
     //Player
     private static List <Player> listPlayer = new ArrayList();
     
