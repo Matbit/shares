@@ -12,5 +12,11 @@ public class ControlGuiSimulation {
         return Data.getCurrentHoldShareA()+"";
     }
     
+    public static void newRound(){
+        //set new rate
+        ControlShare.setAShareRate();
+        
+    }
+    
        
 }

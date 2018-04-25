@@ -1,6 +1,6 @@
 package shares.gui;
 
-import java.awt.Color;
+//import java.awt.Color;
 import java.util.ResourceBundle;
 import shares.controls.ControlBank;
 import shares.controls.ControlBuySell;
@@ -44,6 +44,7 @@ public class ShareSimulation extends javax.swing.JFrame {
         btnSell.setText(bundle.getString("btnSell"));
         btnBuy.setText(bundle.getString("btnBuy"));
         btnAbort.setText(bundle.getString("btnAbort"));
+        btnEndGame.setText(bundle.getString("btnExit"));
                 
     }
     
@@ -96,6 +97,11 @@ public class ShareSimulation extends javax.swing.JFrame {
 
         btnNextRound.setForeground(new java.awt.Color(0, 102, 255));
         btnNextRound.setText("btnNextRound");
+        btnNextRound.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextRoundActionPerformed(evt);
+            }
+        });
 
         lBankAcc.setForeground(new java.awt.Color(0, 102, 255));
         lBankAcc.setText("Bank Account:");
@@ -211,7 +217,7 @@ public class ShareSimulation extends javax.swing.JFrame {
         btnEndGame.setForeground(new java.awt.Color(0, 102, 255));
         btnEndGame.setText("btnEndGame");
 
-        lNotice.setForeground(new java.awt.Color(0, 102, 255));
+        lNotice.setForeground(new java.awt.Color(153, 0, 0));
         lNotice.setText("lNotice");
 
         jMenu1.setText("File");
@@ -285,7 +291,7 @@ public class ShareSimulation extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lSpecific)
-                            .addComponent(lNotice, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lNotice, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -376,6 +382,11 @@ public class ShareSimulation extends javax.swing.JFrame {
         if(ok)
             lNotice.setVisible(false);
     }//GEN-LAST:event_btnSellActionPerformed
+
+    private void btnNextRoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextRoundActionPerformed
+        ControlGuiSimulation.newRound();
+        refreshData();
+    }//GEN-LAST:event_btnNextRoundActionPerformed
 
     /**
      * @param args the command line arguments

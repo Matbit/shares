@@ -17,7 +17,8 @@ public class ControlShare {
      }
      
      public static void setAShareRate(){
-         ServiceValueCalculation.calcNewRate(getAShareAsDouble());
+         double newRate = ServiceValueCalculation.calcNewRate(getAShareAsDouble());
+         Data.addAShareRate(newRate);
      }
      
           
