@@ -25,6 +25,8 @@ public class ShareSimulation extends javax.swing.JFrame {
         lCountAValue.setText(ControlGuiSimulation.getHoldShareA());
         lShowRate.setText(ControlBank.getCurrentShareARate());
         lNotice.setVisible(false);
+        mFile.setText(bundle.getString("mFile"));
+        mFileExit.setText(bundle.getString("mFileExit"));
         
     }
     
@@ -45,6 +47,8 @@ public class ShareSimulation extends javax.swing.JFrame {
         btnBuy.setText(bundle.getString("btnBuy"));
         btnAbort.setText(bundle.getString("btnAbort"));
         btnEndGame.setText(bundle.getString("btnExit"));
+        mFile.setText(bundle.getString("mFile"));
+        mFileExit.setText(bundle.getString("mFileExit"));
                 
     }
     
@@ -89,8 +93,8 @@ public class ShareSimulation extends javax.swing.JFrame {
         btnEndGame = new javax.swing.JButton();
         lNotice = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        mFile = new javax.swing.JMenu();
+        mFileExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -225,11 +229,17 @@ public class ShareSimulation extends javax.swing.JFrame {
         lNotice.setForeground(new java.awt.Color(153, 0, 0));
         lNotice.setText("lNotice");
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        mFile.setText("File");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        mFileExit.setText("jMenuItem1");
+        mFileExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mFileExitActionPerformed(evt);
+            }
+        });
+        mFile.add(mFileExit);
+
+        jMenuBar1.add(mFile);
 
         setJMenuBar(jMenuBar1);
 
@@ -400,6 +410,10 @@ public class ShareSimulation extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAbortActionPerformed
 
+    private void mFileExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFileExitActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_mFileExitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -441,8 +455,6 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JButton btnEndGame;
     private javax.swing.JButton btnNextRound;
     private javax.swing.JButton btnSell;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -461,6 +473,8 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JLabel lShowRate;
     private javax.swing.JLabel lSpecific;
     private javax.swing.JList<String> listCount;
+    private javax.swing.JMenu mFile;
+    private javax.swing.JMenuItem mFileExit;
     private java.awt.Panel panel1;
     // End of variables declaration//GEN-END:variables
 }

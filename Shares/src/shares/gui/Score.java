@@ -15,6 +15,9 @@ public class Score extends javax.swing.JFrame {
         initComponents();
         this.setTitle(bundle.getString("title"));
         setLanguage();
+        mFile.setText(bundle.getString("mFile"));
+        mFileExit.setText(bundle.getString("mFileExit"));
+        
         setStatistics();
     }
     
@@ -59,8 +62,8 @@ public class Score extends javax.swing.JFrame {
         txtAreaScores = new javax.swing.JTextArea();
         btnExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        mFile = new javax.swing.JMenu();
+        mFileExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,11 +85,17 @@ public class Score extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        mFile.setText("File");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        mFileExit.setText("jMenuItem1");
+        mFileExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mFileExitActionPerformed(evt);
+            }
+        });
+        mFile.add(mFileExit);
+
+        jMenuBar1.add(mFile);
 
         setJMenuBar(jMenuBar1);
 
@@ -123,6 +132,10 @@ public class Score extends javax.swing.JFrame {
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void mFileExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFileExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_mFileExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,11 +174,11 @@ public class Score extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lScore;
+    private javax.swing.JMenu mFile;
+    private javax.swing.JMenuItem mFileExit;
     private javax.swing.JTextArea txtAreaScores;
     // End of variables declaration//GEN-END:variables
 }

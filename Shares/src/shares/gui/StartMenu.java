@@ -29,6 +29,13 @@ public class StartMenu extends javax.swing.JFrame {
         lmGender.addElement(bundle.getString("genderFemale"));
         listbxGender.setModel(lmGender);
         listbxGender.setSelectedIndex(0);
+        mEdit.setVisible(false);
+        //menu
+        mFile.setText(bundle.getString("mFile"));
+        mEdit.setText(bundle.getString("mEdit"));
+        mFileExit.setText(bundle.getString("mFileExit"));
+        mEditLanguage.setText(bundle.getString("mEditLanguage"));
+        
         setLanguage();
         
         
@@ -37,6 +44,8 @@ public class StartMenu extends javax.swing.JFrame {
     private void setLanguage(){
         baseName= Language.getLanguage();
         bundle = ResourceBundle.getBundle(baseName);
+        
+        this.setTitle(bundle.getString("title"));
         
         lWelcomeText.setText(bundle.getString("lWelcomeText"));
         llanguageChoose.setText(bundle.getString("lChooseLanguage"));
@@ -50,6 +59,11 @@ public class StartMenu extends javax.swing.JFrame {
         btnExit.setText(bundle.getString("btnExit"));
         btnStart.setText(bundle.getString("btnStart"));
         lException.setText(bundle.getString("lException3"));
+        
+        mFile.setText(bundle.getString("mFile"));
+        mEdit.setText(bundle.getString("mEdit"));
+        mFileExit.setText(bundle.getString("mFileExit"));
+        mEditLanguage.setText(bundle.getString("mEditLanguage"));
        
         
         
@@ -81,10 +95,10 @@ public class StartMenu extends javax.swing.JFrame {
         txtfieldNick = new javax.swing.JTextField();
         lException = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        menuFileNewGame = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        mFile = new javax.swing.JMenu();
+        mFileExit = new javax.swing.JMenuItem();
+        mEdit = new javax.swing.JMenu();
+        mEditLanguage = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -149,18 +163,24 @@ public class StartMenu extends javax.swing.JFrame {
         lException.setForeground(new java.awt.Color(204, 0, 0));
         lException.setText("lException");
 
-        jMenu1.setText("File");
+        mFile.setText("File");
 
-        menuFileNewGame.setText("menuFileNewGame");
-        jMenu1.add(menuFileNewGame);
+        mFileExit.setText("mFileExit");
+        mFileExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mFileExitActionPerformed(evt);
+            }
+        });
+        mFile.add(mFileExit);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(mFile);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        mEdit.setText("Edit");
 
-        jMenu3.setText("jMenu3");
-        jMenuBar1.add(jMenu3);
+        mEditLanguage.setText("mEditLanguage");
+        mEdit.add(mEditLanguage);
+
+        jMenuBar1.add(mEdit);
 
         setJMenuBar(jMenuBar1);
 
@@ -342,6 +362,10 @@ public class StartMenu extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnStartActionPerformed
+
+    private void mFileExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFileExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_mFileExitActionPerformed
     //nickname has to be longer than two chars
     private boolean nickCountChars(){
         
@@ -392,9 +416,6 @@ public class StartMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnStart;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -405,7 +426,10 @@ public class StartMenu extends javax.swing.JFrame {
     private javax.swing.JLabel lWelcomeText;
     private javax.swing.JList<String> listbxGender;
     private javax.swing.JLabel llanguageChoose;
-    private javax.swing.JMenuItem menuFileNewGame;
+    private javax.swing.JMenu mEdit;
+    private javax.swing.JMenuItem mEditLanguage;
+    private javax.swing.JMenu mFile;
+    private javax.swing.JMenuItem mFileExit;
     private javax.swing.JRadioButton rbtnEnglish;
     private javax.swing.JRadioButton rbtnGerman;
     private javax.swing.JTextField txtfieldNick;
