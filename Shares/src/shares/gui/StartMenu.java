@@ -12,9 +12,6 @@ public class StartMenu extends javax.swing.JFrame {
     ResourceBundle bundle;
     DefaultListModel lmGender = new DefaultListModel();
     
-    
-     
-    
     /**
      * Creates new form StartMenu
      */
@@ -36,9 +33,7 @@ public class StartMenu extends javax.swing.JFrame {
         mFileExit.setText(bundle.getString("mFileExit"));
         mEditLanguage.setText(bundle.getString("mEditLanguage"));
         
-        setLanguage();
-        
-        
+        setLanguage(); 
     }
     
     private void setLanguage(){
@@ -65,10 +60,6 @@ public class StartMenu extends javax.swing.JFrame {
         mFileExit.setText(bundle.getString("mFileExit"));
         mEditLanguage.setText(bundle.getString("mEditLanguage"));
        
-        
-        
-        
-        
     }
 
     /**
@@ -103,6 +94,7 @@ public class StartMenu extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lWelcomeText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lWelcomeText.setText("lWelcomeText");
@@ -162,6 +154,8 @@ public class StartMenu extends javax.swing.JFrame {
 
         lException.setForeground(new java.awt.Color(204, 0, 0));
         lException.setText("lException");
+
+        jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
 
         mFile.setText("File");
 

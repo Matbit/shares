@@ -16,9 +16,6 @@ public class ControlGuiStart {
         
         Player player = new Player(nick, playersGender);
         Data.addPlayer(player);
-        
-        //delete when development is finish
-        System.out.println(Data.getAPlayer().getNickname() + Data.getAPlayer().getGender());
     }
     
     public static void createShares(){
@@ -28,6 +25,5 @@ public class ControlGuiStart {
         System.out.println("share ok..");
         
     }
-    
-    //public static bool 
+      
 }

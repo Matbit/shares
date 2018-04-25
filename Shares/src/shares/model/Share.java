@@ -2,7 +2,6 @@ package shares.model;
 
 import java.util.ArrayList;
 
-
 public class Share {
     
     private double marketValue;

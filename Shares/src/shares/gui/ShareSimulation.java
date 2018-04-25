@@ -1,6 +1,5 @@
 package shares.gui;
 
-//import java.awt.Color;
 import java.util.ResourceBundle;
 import shares.controls.ControlBank;
 import shares.controls.ControlBuySell;
@@ -37,9 +36,6 @@ public class ShareSimulation extends javax.swing.JFrame {
         lBankAcc.setText(bundle.getString("lBankAcc"));
         lPortfolio.setText(bundle.getString("lPortfolio"));
         lRate.setText(bundle.getString("lRate"));
-        /*Company name
-        TO DO: implement control.method to get real company name
-        */
         lSpecific.setText(bundle.getString("lSpecific"));
         lCountA.setText(bundle.getString("lCountA"));
         btnNextRound.setText(bundle.getString("btnNextRound"));
@@ -98,7 +94,9 @@ public class ShareSimulation extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
+        btnNextRound.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnNextRound.setForeground(new java.awt.Color(0, 102, 255));
         btnNextRound.setText("btnNextRound");
         btnNextRound.addActionListener(new java.awt.event.ActionListener() {
@@ -107,19 +105,23 @@ public class ShareSimulation extends javax.swing.JFrame {
             }
         });
 
+        lBankAcc.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lBankAcc.setForeground(new java.awt.Color(0, 102, 255));
         lBankAcc.setText("Bank Account:");
 
+        lPortfolio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lPortfolio.setForeground(new java.awt.Color(0, 102, 255));
         lPortfolio.setText("Portfolio:");
 
+        lBankAccValue.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lBankAccValue.setForeground(new java.awt.Color(0, 102, 255));
         lBankAccValue.setText("5000,00 €");
 
+        lPortfolioValue.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lPortfolioValue.setForeground(new java.awt.Color(0, 102, 255));
         lPortfolioValue.setText("1500,00 €");
 
-        lCompanyName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lCompanyName.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lCompanyName.setForeground(new java.awt.Color(0, 102, 255));
         lCompanyName.setText("CompanyName");
 
@@ -127,7 +129,7 @@ public class ShareSimulation extends javax.swing.JFrame {
         lRate.setForeground(new java.awt.Color(0, 102, 255));
         lRate.setText("Rate:");
 
-        lShowRate.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lShowRate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lShowRate.setForeground(new java.awt.Color(0, 102, 255));
         lShowRate.setText("85,36 €");
 
@@ -145,6 +147,7 @@ public class ShareSimulation extends javax.swing.JFrame {
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
+        lSpecific.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lSpecific.setForeground(new java.awt.Color(0, 102, 255));
         lSpecific.setText("specific quantity");
 
@@ -161,6 +164,7 @@ public class ShareSimulation extends javax.swing.JFrame {
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
+        btnSell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnSell.setForeground(new java.awt.Color(0, 102, 255));
         btnSell.setText("Sell");
         btnSell.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +173,7 @@ public class ShareSimulation extends javax.swing.JFrame {
             }
         });
 
+        btnBuy.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnBuy.setForeground(new java.awt.Color(0, 102, 255));
         btnBuy.setText("Buy");
         btnBuy.addActionListener(new java.awt.event.ActionListener() {
@@ -188,6 +193,7 @@ public class ShareSimulation extends javax.swing.JFrame {
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
+        listCount.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         listCount.setForeground(new java.awt.Color(0, 102, 255));
         listCount.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1", "5", "10", "15", "20", "25", "30", "50", "70", "100" };
@@ -209,6 +215,7 @@ public class ShareSimulation extends javax.swing.JFrame {
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
+        btnAbort.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnAbort.setForeground(new java.awt.Color(0, 102, 255));
         btnAbort.setText("btnAbort");
         btnAbort.addActionListener(new java.awt.event.ActionListener() {
@@ -217,17 +224,28 @@ public class ShareSimulation extends javax.swing.JFrame {
             }
         });
 
+        lCountA.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lCountA.setForeground(new java.awt.Color(0, 102, 255));
         lCountA.setText("lCountA:");
 
+        lCountAValue.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lCountAValue.setForeground(new java.awt.Color(0, 102, 255));
         lCountAValue.setText("lCountAValue");
 
+        btnEndGame.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnEndGame.setForeground(new java.awt.Color(0, 102, 255));
         btnEndGame.setText("btnEndGame");
+        btnEndGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEndGameActionPerformed(evt);
+            }
+        });
 
+        lNotice.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lNotice.setForeground(new java.awt.Color(153, 0, 0));
         lNotice.setText("lNotice");
+
+        jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
 
         mFile.setText("File");
 
@@ -274,32 +292,31 @@ public class ShareSimulation extends javax.swing.JFrame {
                                         .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(31, 31, 31)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(lRate)
+                                                        .addGap(33, 33, 33)
+                                                        .addComponent(lShowRate))
+                                                    .addComponent(lCompanyName)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(lCountA)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(lCountAValue)))
+                                                .addContainerGap())))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(117, 117, 117)
-                                                .addComponent(lCompanyName))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(81, 81, 81)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(lRate)
-                                                    .addComponent(lCountA))
-                                                .addGap(30, 30, 30)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(lCountAValue)
-                                                    .addComponent(lShowRate)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(407, 407, 407)
-                                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(407, 407, 407)
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addContainerGap())))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(216, 216, 216)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnAbort, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnEndGame, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnNextRound, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(212, 212, 212))))
+                                .addContainerGap())))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(346, 346, 346)
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -315,10 +332,11 @@ public class ShareSimulation extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lBankAcc)
-                            .addComponent(lBankAccValue)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lBankAcc)
+                                .addComponent(lBankAccValue))
                             .addComponent(lCompanyName))
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -348,14 +366,14 @@ public class ShareSimulation extends javax.swing.JFrame {
                                 .addComponent(btnBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnEndGame, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnAbort, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnNextRound, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(btnEndGame, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAbort, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnNextRound, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -363,7 +381,7 @@ public class ShareSimulation extends javax.swing.JFrame {
                 .addGap(59, 59, 59))
         );
 
-        setBounds(0, 0, 575, 491);
+        setBounds(0, 0, 558, 491);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyActionPerformed
@@ -413,6 +431,10 @@ public class ShareSimulation extends javax.swing.JFrame {
     private void mFileExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFileExitActionPerformed
        System.exit(0);
     }//GEN-LAST:event_mFileExitActionPerformed
+
+    private void btnEndGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEndGameActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnEndGameActionPerformed
 
     /**
      * @param args the command line arguments

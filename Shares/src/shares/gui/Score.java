@@ -39,14 +39,9 @@ public class Score extends javax.swing.JFrame {
         txtAreaScores.append("\n");
         txtAreaScores.append(bundle.getString("txtProcent")+ " "+ControlGuiScore.getProcentProfit());
         txtAreaScores.append("\n");
-        
-        
-        
-        
-       
+              
     }
-    
-    
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,15 +61,19 @@ public class Score extends javax.swing.JFrame {
         mFileExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lScore.setText("lScore");
 
         txtAreaScores.setEditable(false);
+        txtAreaScores.setBackground(new java.awt.Color(255, 255, 204));
         txtAreaScores.setColumns(20);
+        txtAreaScores.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txtAreaScores.setLineWrap(true);
         txtAreaScores.setRows(5);
         txtAreaScores.setText("txtAreaScores");
         txtAreaScores.setAutoscrolls(false);
+        txtAreaScores.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtAreaScores.setEnabled(false);
         jScrollPane1.setViewportView(txtAreaScores);
 
@@ -84,6 +83,8 @@ public class Score extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
+
+        jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
 
         mFile.setText("File");
 

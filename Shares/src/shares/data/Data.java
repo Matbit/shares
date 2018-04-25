@@ -1,10 +1,8 @@
 package shares.data;
 
 import java.util.ArrayList;
-//import java.util.Collection;
 import java.util.List;
 import shares.model.Player;
-//import shares.model.Share;
 
 public class Data {
     
@@ -46,15 +44,12 @@ public class Data {
         companyName = aCompanyName;
     }
     
-    
-    
     //BankAcc
     private static ArrayList aBankAcc = new ArrayList();
     
     public static double getCurrentBankAcc(){
         int i = aBankAcc.size();
         return (double) aBankAcc.get((i-1));
-                
     }
     
     public static void addBankAcc(double amount){

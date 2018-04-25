@@ -32,6 +32,4 @@ public class ControlGuiScore {
         DecimalFormat f = new DecimalFormat("#0.00€");
         return f.format(d);
      }
-    
-    
-}
+    }

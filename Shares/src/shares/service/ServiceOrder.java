@@ -2,7 +2,6 @@ package shares.service;
 
 import shares.data.Data;
 
-
 public class ServiceOrder {
     
     public static void buyShare(int count){

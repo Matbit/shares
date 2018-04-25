@@ -3,8 +3,8 @@ package shares.program.settings;
 public class Language {
     private static String choosenLanguage = "Text_en";
     
-    private static final String english = "Text_en";
-    private static final String german = "Text_de";
+    private static final String ENGLISH = "Text_en";
+    private static final String GERMAN = "Text_de";
     
     public enum aLanguage{
         ENGLISH, GERMAN;
@@ -20,10 +20,10 @@ public class Language {
            return;
         
         if(choose == aLanguage.ENGLISH)
-            choosenLanguage = english;
+            choosenLanguage = ENGLISH;
         
         if(choose == aLanguage.GERMAN)
-            choosenLanguage = german;
+            choosenLanguage = GERMAN;
         
         System.out.println(choosenLanguage);
     }

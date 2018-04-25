@@ -2,7 +2,6 @@ package shares.controls;
 
 import java.text.DecimalFormat;
 import shares.data.Data;
-import shares.program.settings.Language;
 import shares.service.ServiceValueCalculation;
 
 public class ControlShare {
