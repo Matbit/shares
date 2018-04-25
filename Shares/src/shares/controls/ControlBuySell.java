@@ -18,6 +18,19 @@ public class ControlBuySell {
         return true;
     }
     
+    public static boolean processSellOrder(String count){
+        
+        int aCount = Integer.parseInt(count);
+        int currentHolding = Data.getCurrentHoldShareA();
+        
+        if(aCount > currentHolding){
+            return false;
+        }
+        else ServiceOrder.sellOrder(aCount);
+        return true;
+        
+    }
+    
     
     
     

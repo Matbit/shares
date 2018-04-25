@@ -10,9 +10,25 @@ public class ServiceOrder {
         double rate = Data.getCurrentAShare();
         double cost = (rate * count) *(-1);
         double newBankAcc = Data.getCurrentBankAcc() + cost;
+        Data.addBankAcc(newBankAcc);
         
         //add count to portfolio
-        Data.addCountShareA(count);
+        int oldCount = Data.getCurrentHoldShareA();
+        Data.addCountShareA(count + oldCount);
+               
+    }
+    
+    public static void sellOrder(int count){
+        
+       //get earnings
+       double rate = Data.getCurrentAShare();
+       double earning = rate * count;
+       double newBankAcc = Data.getCurrentBankAcc() + earning;
+       Data.addBankAcc(newBankAcc);
+       
+       //refresh portfolio
+       int oldHolding = Data.getCurrentHoldShareA();
+       Data.addCountShareA(oldHolding - count);
                
     }
     
