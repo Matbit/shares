@@ -1,6 +1,7 @@
 
 package shares.gui;
 
+import java.awt.Color;
 import java.util.ResourceBundle;
 import shares.controls.ControlGuiScore;
 import shares.program.settings.Language;
@@ -26,8 +27,17 @@ public class Score extends javax.swing.JFrame {
     }
     
     private void setStatistics(){
-        //txtAreaScores.insert((bundle.getString("txtStartCapital")+ " "+ControlGuiScore.getStartAmount()), 10);
+        txtAreaScores.setLineWrap(true);
         txtAreaScores.setText(bundle.getString("txtStartCapital")+ " "+ControlGuiScore.getStartAmount());
+        txtAreaScores.append("\n");
+        txtAreaScores.append(bundle.getString("txtEndCapital")+ " "+ControlGuiScore.getEndCapital());
+        txtAreaScores.append("\n");
+        txtAreaScores.append(bundle.getString("txtDiff")+ " "+ ControlGuiScore.getDiffFortune());
+        txtAreaScores.append("\n");
+        
+        
+        
+        
        
     }
     
@@ -53,7 +63,9 @@ public class Score extends javax.swing.JFrame {
 
         lScore.setText("lScore");
 
+        txtAreaScores.setEditable(false);
         txtAreaScores.setColumns(20);
+        txtAreaScores.setLineWrap(true);
         txtAreaScores.setRows(5);
         txtAreaScores.setText("txtAreaScores");
         txtAreaScores.setAutoscrolls(false);

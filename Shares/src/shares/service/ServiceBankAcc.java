@@ -18,5 +18,13 @@ public class ServiceBankAcc {
         return rate * holding;
     }
     
+    public static double getTotalFortune(){
+        return calcCurrentPortfolio()+ Data.getCurrentBankAcc();
+    }
+    
+    public static double getDiffFortune(){
+        return getTotalFortune() - Data.getSelectedBankAcc(0); 
+    }
+    
     
 }
