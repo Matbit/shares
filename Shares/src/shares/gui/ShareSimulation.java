@@ -3,6 +3,7 @@ package shares.gui;
 import java.awt.Color;
 import java.util.ResourceBundle;
 import shares.controls.ControlBank;
+import shares.controls.ControlBuySell;
 import shares.controls.ControlGuiSimulation;
 import shares.program.settings.Language;
 
@@ -23,6 +24,7 @@ public class ShareSimulation extends javax.swing.JFrame {
         lPortfolioValue.setText(ControlBank.getCurrentPortfolio());
         lCountAValue.setText(ControlGuiSimulation.getHoldShareA());
         lShowRate.setText(ControlBank.getCurrentShareARate());
+        lNotice.setVisible(false);
         
     }
     
@@ -43,6 +45,14 @@ public class ShareSimulation extends javax.swing.JFrame {
         btnBuy.setText(bundle.getString("btnBuy"));
         btnAbort.setText(bundle.getString("btnAbort"));
                 
+    }
+    
+    private void refreshData(){
+        lBankAccValue.setText(ControlBank.getBankAcc());
+        lPortfolioValue.setText(ControlBank.getCurrentPortfolio());
+        lCountAValue.setText(ControlGuiSimulation.getHoldShareA());
+        lShowRate.setText(ControlBank.getCurrentShareARate());
+        
     }
 
     /**
@@ -70,7 +80,7 @@ public class ShareSimulation extends javax.swing.JFrame {
         btnBuy = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listCount = new javax.swing.JList<>();
         jPanel3 = new javax.swing.JPanel();
         btnAbort = new javax.swing.JButton();
         lCountA = new javax.swing.JLabel();
@@ -146,6 +156,11 @@ public class ShareSimulation extends javax.swing.JFrame {
 
         btnBuy.setForeground(new java.awt.Color(0, 102, 255));
         btnBuy.setText("Buy");
+        btnBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuyActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -158,13 +173,13 @@ public class ShareSimulation extends javax.swing.JFrame {
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jList1.setForeground(new java.awt.Color(0, 102, 255));
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listCount.setForeground(new java.awt.Color(0, 102, 255));
+        listCount.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1", "5", "10", "15", "20", "25", "30", "50", "70", "100" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listCount);
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -224,7 +239,10 @@ public class ShareSimulation extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnSell, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(btnBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(lNotice)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -250,8 +268,7 @@ public class ShareSimulation extends javax.swing.JFrame {
                                             .addComponent(lCountAValue)
                                             .addComponent(lShowRate)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lNotice)
-                                        .addGap(236, 236, 236)
+                                        .addGap(268, 268, 268)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -305,26 +322,40 @@ public class ShareSimulation extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lNotice)
+                        .addComponent(lSpecific)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lSpecific)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(23, 23, 23)
-                                        .addComponent(btnSell, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(btnSell, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lNotice))
+                .addGap(73, 73, 73))
         );
 
         setBounds(0, 0, 601, 491);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyActionPerformed
+        
+        boolean ok = ControlBuySell.processBuyOrder(listCount.getSelectedValue());
+        
+        if(!ok){
+            lNotice.setText(bundle.getString("ErrorTooMuchShares"));
+            lNotice.setVisible(true);
+        }
+        
+        //if transaction is fine, than refresh all data
+        refreshData();
+        
+        
+    }//GEN-LAST:event_btnBuyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,7 +398,6 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JButton btnEndGame;
     private javax.swing.JButton btnNextRound;
     private javax.swing.JButton btnSell;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -387,6 +417,7 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JLabel lRate;
     private javax.swing.JLabel lShowRate;
     private javax.swing.JLabel lSpecific;
+    private javax.swing.JList<String> listCount;
     private java.awt.Panel panel1;
     // End of variables declaration//GEN-END:variables
 }

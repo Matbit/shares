@@ -11,6 +11,10 @@ public class Data {
     //Share A rate
     private static ArrayList aShareRate = new ArrayList();
     
+    /**
+     * returns a value about current share rate
+     * @return aShareRate double
+     */
     public static double getCurrentAShare(){
         int i = aShareRate.size();
         
