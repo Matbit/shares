@@ -48,78 +48,84 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lBankAcc" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lPortfolio" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lBankAccValue" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lPortfolioValue" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Component id="btnAbort" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
-              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="lSpecific" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="panel1" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel2" max="32767" attributes="0"/>
-                          <Component id="jPanel3" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                      <Component id="jPanel1" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                              <Component id="lCompanyName" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lRate" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lCountA" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lCountAValue" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lShowRate" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="216" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnSell" max="32767" attributes="0"/>
-                          <Component id="btnBuy" pref="86" max="32767" attributes="0"/>
-                      </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lBankAcc" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lPortfolio" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lBankAccValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lPortfolioValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnNextRound" min="-2" pref="133" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnSell" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="btnBuy" min="-2" pref="100" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="panel1" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jPanel2" max="32767" attributes="0"/>
+                                  <Component id="jPanel3" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                              <Component id="jPanel1" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                                      <Component id="lCompanyName" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lRate" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lCountA" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lCountAValue" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lShowRate" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lNotice" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="btnAbort" min="-2" pref="133" max="-2" attributes="0"/>
+                                                  <Component id="btnEndGame" min="-2" pref="133" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="btnNextRound" min="-2" pref="133" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="lSpecific" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -154,44 +160,49 @@
                   </Group>
                   <Component id="panel1" min="-2" pref="144" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-              <Component id="lSpecific" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                      <Component id="btnSell" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Component id="btnBuy" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Component id="btnNextRound" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jScrollPane1" min="-2" pref="192" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnEndGame" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnAbort" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Component id="btnNextRound" min="-2" pref="36" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lNotice" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="lSpecific" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane1" min="-2" pref="192" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                      <Component id="btnSell" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnBuy" min="-2" pref="30" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnAbort" min="-2" pref="36" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -200,7 +211,7 @@
     <Component class="javax.swing.JButton" name="btnNextRound">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="btnNextRound"/>
       </Properties>
@@ -208,7 +219,7 @@
     <Component class="javax.swing.JLabel" name="lBankAcc">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Bank Account:"/>
       </Properties>
@@ -216,7 +227,7 @@
     <Component class="javax.swing.JLabel" name="lPortfolio">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Portfolio:"/>
       </Properties>
@@ -224,7 +235,7 @@
     <Component class="javax.swing.JLabel" name="lBankAccValue">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="5000,00 &#x20ac;"/>
       </Properties>
@@ -232,7 +243,7 @@
     <Component class="javax.swing.JLabel" name="lPortfolioValue">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="1500,00 &#x20ac;"/>
       </Properties>
@@ -243,7 +254,7 @@
           <Font name="Arial" size="14" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="CompanyName"/>
       </Properties>
@@ -254,7 +265,7 @@
           <Font name="Arial" size="12" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Rate:"/>
       </Properties>
@@ -265,7 +276,7 @@
           <Font name="Arial" size="14" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="85,36 &#x20ac;"/>
       </Properties>
@@ -284,7 +295,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="305" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -362,6 +373,9 @@
       <SubComponents>
         <Component class="javax.swing.JList" name="jList1">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="0" type="rgb"/>
+            </Property>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
               <StringArray count="10">
                 <StringItem index="0" value="1"/>
@@ -406,7 +420,7 @@
     <Component class="javax.swing.JButton" name="btnAbort">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="66" red="0" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="btnAbort"/>
       </Properties>
@@ -414,7 +428,7 @@
     <Component class="javax.swing.JLabel" name="lCountA">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="66" red="0" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="lCountA:"/>
       </Properties>
@@ -422,9 +436,25 @@
     <Component class="javax.swing.JLabel" name="lCountAValue">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
+          <Color blue="ff" green="66" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="lCountAValue"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEndGame">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="btnEndGame"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lNotice">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="lNotice"/>
       </Properties>
     </Component>
   </SubComponents>
