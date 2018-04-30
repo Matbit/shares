@@ -23,13 +23,14 @@ public class ControlGuiStart {
         Share aNew = new Share();
         Data.setCompanyName(aNew.getName());
         Data.addAShareRate(aNew.getMarketValue());       
-        System.out.println("share A ok..");
+        
         
         //create share two
         Share bNew = new Share();
-        Data.setCompanyName(bNew.getName());
-        Data.addAShareRate(bNew.getMarketValue());
-        System.out.println("share B ok..");
+        System.out.println(bNew.getName());
+        Data.setCompanyNameB(bNew.getName());
+        Data.addBShareRate(bNew.getMarketValue());
+        System.out.println("shares init ok..");
         
     }
       

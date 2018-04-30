@@ -54,7 +54,7 @@ public class Data {
         
         if(!bShareRate.isEmpty()){
         
-            if(getCurrentAShare() < 0.01){
+            if(getCurrentBShare() < 0.01){
             return;
             }
         }
@@ -124,7 +124,7 @@ public class Data {
     }
     
     public static void addCountShareB(int count){
-        holdShareA.add(count);
+        holdShareB.add(count);
     }
     
     private static String companyNameB;

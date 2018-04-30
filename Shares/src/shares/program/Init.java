@@ -12,14 +12,16 @@ class Init {
         
         String baseName = Language.getLanguage();
         ResourceBundle bundle = ResourceBundle.getBundle(baseName);
-               
+        
+        Data.addBankAcc(StartValues.getStartCapital());
+        Data.addCountShareA(StartValues.getHolding());
+        Data.addCountShareB(StartValues.getHolding());
+        
         StartMenu start = new StartMenu();
         start.setTitle(bundle.getString("title"));
         start.setLocationRelativeTo(null);
         start.setVisible(true);
-        Data.addBankAcc(StartValues.getStartCapital());
-        Data.addCountShareA(StartValues.getHolding());
-        Data.addCountShareB(StartValues.getHolding());
+        
         
     }
 }

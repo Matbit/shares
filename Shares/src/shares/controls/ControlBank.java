@@ -26,6 +26,10 @@ public class ControlBank {
         return formatInEuro(Data.getCurrentAShare());
     }
     
+    public static String getCurrentShareBRate(){
+        return formatInEuro(Data.getCurrentBShare());
+    }
+    
     
     
     private static String formatInEuro(double d){

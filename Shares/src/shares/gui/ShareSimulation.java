@@ -20,9 +20,12 @@ public class ShareSimulation extends javax.swing.JFrame {
         setLanguage();
         lBankAccValue.setText(ControlBank.getBankAcc());
         lCompanyName.setText(ControlGuiSimulation.getCompanyName());
+        lCompanyNameB.setText(ControlGuiSimulation.getCompanyNameB());
         lPortfolioValue.setText(ControlBank.getCurrentPortfolio());
         lCountAValue.setText(ControlGuiSimulation.getHoldShareA());
+        lCountBValue.setText(ControlGuiSimulation.getHoldShareB());
         lShowRate.setText(ControlBank.getCurrentShareARate());
+        lShowRateB.setText(ControlBank.getCurrentShareBRate());
         lNotice.setVisible(false);
         mFile.setText(bundle.getString("mFile"));
         mFileExit.setText(bundle.getString("mFileExit"));
@@ -53,7 +56,9 @@ public class ShareSimulation extends javax.swing.JFrame {
         lPortfolioValue.setText(ControlBank.getCurrentPortfolio());
         lCountAValue.setText(ControlGuiSimulation.getHoldShareA());
         lShowRate.setText(ControlBank.getCurrentShareARate());
-        
+        lShowRateB.setText(ControlBank.getCurrentShareBRate());
+        lCountBValue.setText(ControlGuiSimulation.getHoldShareB());
+                
     }
 
     /**
