@@ -32,6 +32,40 @@ public class Data {
         aShareRate.add(rate);
     }
     
+    //Share B rate
+    private static ArrayList bShareRate = new ArrayList();
+    
+    /**
+     * returns a value about current share rate
+     * @return aShareRate double
+     */
+    public static double getCurrentBShare(){
+        int i = bShareRate.size();
+        
+        return (double)bShareRate.get((i-1));
+        
+    }
+    
+    /**
+     * needs rate of share "b" and saves it in arraylist. 
+     * @param rate (double)
+     */
+    public static void addBShareRate(double rate){
+        
+        if(!bShareRate.isEmpty()){
+        
+            if(getCurrentAShare() < 0.01){
+            return;
+            }
+        }
+        
+        bShareRate.add(rate);
+    }
+    
+      
+    
+    
+    
     private static String companyName;
     
      
@@ -82,5 +116,18 @@ public class Data {
     public static void addCountShareA(int count){
         holdShareA.add(count);
     }
+    
+    //count how many Share B shares were bought
+    private static ArrayList holdShareB = new ArrayList();
+    
+    public static int getCurrentHoldShareB(){
+        int i = holdShareB.size();
+        return (int) holdShareB.get((i-1));
+    }
+    
+    public static void addCountShareB(int count){
+        holdShareA.add(count);
+    }
+    
     
 }

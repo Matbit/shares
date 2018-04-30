@@ -19,6 +19,7 @@ class Init {
         start.setVisible(true);
         Data.addBankAcc(StartValues.getStartCapital());
         Data.addCountShareA(StartValues.getHolding());
+        Data.addCountShareB(StartValues.getHolding());
         
     }
 }
