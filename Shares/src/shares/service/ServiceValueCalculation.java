@@ -2,7 +2,7 @@ package shares.service;
 
 public class ServiceValueCalculation {
     
-    //calculate new share rate
+    //calculate new share rate (a)
     public static double calcNewRate(double oldRate){
         //factor
         int factor;
@@ -14,6 +14,26 @@ public class ServiceValueCalculation {
         double plusOrMinus = (int) (Math.random()*100);
         
         if(plusOrMinus < 63)
+            factor = 1;
+        else
+            factor = -1;
+        
+        return oldRate+(rate * factor);
+        
+    }
+    
+    //calculate new share rate (b)
+    public static double calcNewRateB(double oldRate){
+        //factor
+        int factor;
+
+        //get rate
+        double rate = calcRate();        
+        
+        //random decision - plus or minus
+        double plusOrMinus = (int) (Math.random()*100);
+        
+        if(plusOrMinus < 46)
             factor = 1;
         else
             factor = -1;

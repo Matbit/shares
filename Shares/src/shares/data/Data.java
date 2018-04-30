@@ -64,8 +64,6 @@ public class Data {
     
       
     
-    
-    
     private static String companyName;
     
      
@@ -127,6 +125,22 @@ public class Data {
     
     public static void addCountShareB(int count){
         holdShareA.add(count);
+    }
+    
+    private static String companyNameB;
+    
+    /**
+     * @return the companyNameB
+     */
+    public static String getCompanyNameB() {
+        return companyNameB;
+    }
+
+    /**
+     * @param aCompanyNameB the companyNameB to set
+     */
+    public static void setCompanyNameB(String aCompanyNameB) {
+        companyNameB = aCompanyNameB;
     }
     
     

@@ -20,6 +20,19 @@ public class ControlShare {
          Data.addAShareRate(newRate);
      }
      
+     //get Share B current marketRate
+     public static String getBSharerate(){
+         return formatInEuro(Data.getCurrentBShare());
+     }
+     
+     private static double getBShareAsDouble(){
+         return Data.getCurrentBShare();
+     }
+     
+     public static void setBShareRate(){
+         double newRate = ServiceValueCalculation.calcNewRateB(getBShareAsDouble());
+         Data.addBShareRate(newRate);
+     }
           
      private static String formatInEuro(double d){
         DecimalFormat f = new DecimalFormat("#0.00€");
