@@ -30,8 +30,7 @@ public class ControlGuiStart {
         System.out.println(bNew.getName());
         Data.setCompanyNameB(bNew.getName());
         Data.addBShareRate(bNew.getMarketValue());
-        System.out.println("shares init ok..");
-        
+                
     }
       
 }
