@@ -96,11 +96,16 @@ public class StartMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        lWelcomeText.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lWelcomeText.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lWelcomeText.setForeground(new java.awt.Color(0, 153, 255));
         lWelcomeText.setText("lWelcomeText");
 
+        llanguageChoose.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        llanguageChoose.setForeground(new java.awt.Color(0, 153, 255));
         llanguageChoose.setText("languageChoose");
 
+        rbtnEnglish.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        rbtnEnglish.setForeground(new java.awt.Color(0, 153, 255));
         rbtnEnglish.setSelected(true);
         rbtnEnglish.setText("rbtnEnglish");
         rbtnEnglish.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -114,6 +119,8 @@ public class StartMenu extends javax.swing.JFrame {
             }
         });
 
+        rbtnGerman.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        rbtnGerman.setForeground(new java.awt.Color(0, 153, 255));
         rbtnGerman.setText("rbtnGerman");
         rbtnGerman.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -126,9 +133,12 @@ public class StartMenu extends javax.swing.JFrame {
             }
         });
 
-        lPlayer.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lPlayer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lPlayer.setForeground(new java.awt.Color(0, 153, 255));
         lPlayer.setText("lPlayer");
 
+        btnExit.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(0, 153, 255));
         btnExit.setText("btnExit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +146,8 @@ public class StartMenu extends javax.swing.JFrame {
             }
         });
 
+        btnStart.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnStart.setForeground(new java.awt.Color(0, 153, 255));
         btnStart.setText("btnStart");
         btnStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,15 +155,26 @@ public class StartMenu extends javax.swing.JFrame {
             }
         });
 
+        listbxGender.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        listbxGender.setForeground(new java.awt.Color(0, 153, 255));
         listbxGender.setAutoscrolls(false);
+        listbxGender.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        listbxGender.setSelectionForeground(new java.awt.Color(0, 153, 255));
         jScrollPane1.setViewportView(listbxGender);
 
+        lChooseGender.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lChooseGender.setForeground(new java.awt.Color(0, 153, 255));
         lChooseGender.setText("lchooseGender");
 
+        lEnterNickname.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lEnterNickname.setForeground(new java.awt.Color(0, 153, 255));
         lEnterNickname.setText("lEnterNickname");
 
+        txtfieldNick.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtfieldNick.setForeground(new java.awt.Color(0, 153, 255));
         txtfieldNick.setText("Joe");
 
+        lException.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lException.setForeground(new java.awt.Color(204, 0, 0));
         lException.setText("lException");
 
@@ -183,42 +206,34 @@ public class StartMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lException)
+                    .addComponent(lWelcomeText)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(rbtnEnglish)
+                            .addComponent(llanguageChoose)
+                            .addComponent(rbtnGerman)
+                            .addComponent(lPlayer)
+                            .addComponent(lEnterNickname)
+                            .addComponent(txtfieldNick, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbtnEnglish)
-                                    .addComponent(llanguageChoose)
-                                    .addComponent(rbtnGerman)
-                                    .addComponent(lPlayer)
-                                    .addComponent(lEnterNickname)
-                                    .addComponent(txtfieldNick, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(62, 62, 62)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lChooseGender)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnExit)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
-                                .addComponent(btnStart))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lException)
-                            .addComponent(lWelcomeText))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(74, 74, 74))
+                            .addComponent(btnStart)
+                            .addComponent(lChooseGender)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(33, 33, 33)
                 .addComponent(lWelcomeText)
-                .addGap(18, 18, 18)
+                .addGap(36, 36, 36)
                 .addComponent(lException)
-                .addGap(21, 21, 21)
+                .addGap(26, 26, 26)
                 .addComponent(llanguageChoose)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbtnEnglish)
@@ -239,7 +254,7 @@ public class StartMenu extends javax.swing.JFrame {
                             .addComponent(btnExit)
                             .addComponent(btnStart)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();

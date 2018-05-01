@@ -188,6 +188,7 @@ public class ShareSimulation extends javax.swing.JFrame {
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
+        btnSell.setBackground(new java.awt.Color(255, 153, 153));
         btnSell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnSell.setForeground(new java.awt.Color(0, 102, 255));
         btnSell.setText("Sell");
@@ -197,6 +198,7 @@ public class ShareSimulation extends javax.swing.JFrame {
             }
         });
 
+        btnBuy.setBackground(new java.awt.Color(153, 255, 153));
         btnBuy.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnBuy.setForeground(new java.awt.Color(0, 102, 255));
         btnBuy.setText("Buy");
