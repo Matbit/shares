@@ -331,31 +331,32 @@ public class ShareSimulation extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lCompanyName)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lRate)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(lShowRate))
+                                        .addGap(31, 31, 31)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lCompanyName)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(lRate)
+                                                .addGap(33, 33, 33)
+                                                .addComponent(lShowRate))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(lCountA)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(lCountAValue)))
+                                        .addGap(95, 95, 95)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lCountBValue)
+                                            .addComponent(lShowRateB)
+                                            .addComponent(lCompanyNameB)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lCountA)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lCountAValue)))
-                                .addGap(95, 95, 95)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lCountBValue)
-                                    .addComponent(lShowRateB)
-                                    .addComponent(lCompanyNameB))
-                                .addContainerGap())
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(244, 244, 244)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnNextRound, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnEndGame, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnAbort, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(244, 244, 244)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnNextRound, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnEndGame, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnAbort, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap())))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(346, 346, 346)
@@ -433,8 +434,12 @@ public class ShareSimulation extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyActionPerformed
-        
-        boolean ok = ControlBuySell.processBuyOrder(listCount.getSelectedValue());
+        int share = -1;
+        if(rbtnA.isSelected()){
+            share = 0;
+        }
+        else share = 1;
+        boolean ok = ControlBuySell.processBuyOrder(listCount.getSelectedValue(), share);
         
         if(!ok){
             lNotice.setText(bundle.getString("ErrorTooMuchShares"));
@@ -451,7 +456,12 @@ public class ShareSimulation extends javax.swing.JFrame {
 
     private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellActionPerformed
         
-        boolean ok = ControlBuySell.processSellOrder(listCount.getSelectedValue());
+        int share = -1;
+        if(rbtnA.isSelected()){
+            share = 0;
+        }
+        else share = 1;
+        boolean ok = ControlBuySell.processSellOrder(listCount.getSelectedValue(), share);
         
         if(!ok){
             lNotice.setText(bundle.getString("ErrorHolding"));
