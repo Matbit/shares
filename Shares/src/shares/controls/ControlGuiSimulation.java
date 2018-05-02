@@ -1,8 +1,8 @@
 package shares.controls;
 
 import java.time.LocalDate;
-import java.time.Month;
 import shares.data.Data;
+import shares.data.StartValues;
 import shares.service.ServiceSavAcc;
 
 public class ControlGuiSimulation {
@@ -42,6 +42,19 @@ public class ControlGuiSimulation {
     
     public static String getCurrentDate(){
         return Data.getDateTime().toString();
+    }
+    
+    //menu option -> New Game
+    public static void startNewGame(){
+        
+        Data.addBankAcc(StartValues.getStartCapital());
+        Data.addCountShareA(StartValues.getHolding());
+        Data.addCountShareB(StartValues.getHolding());
+        StartValues.setStartSaveAccount();
+        StartValues.setStartInterestRate();
+        StartValues.setTime();
+        Data.reCountDays();
+        
     }
     
     

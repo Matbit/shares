@@ -190,6 +190,9 @@ public class Data {
     private static void setDays(int i){
         days += i;
     }
+    public static void reCountDays(){
+        days = 0;
+    }
     
     
     

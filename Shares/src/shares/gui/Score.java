@@ -3,6 +3,7 @@ package shares.gui;
 
 import java.util.ResourceBundle;
 import shares.controls.ControlGuiScore;
+import shares.controls.ControlGuiSimulation;
 import shares.program.settings.Language;
 
 
@@ -17,6 +18,7 @@ public class Score extends javax.swing.JFrame {
         setLanguage();
         mFile.setText(bundle.getString("mFile"));
         mFileExit.setText(bundle.getString("mFileExit"));
+        mFileNewGame.setText(bundle.getString("mFileNewGame"));
         
         setStatistics();
     }
@@ -60,6 +62,7 @@ public class Score extends javax.swing.JFrame {
         btnExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mFile = new javax.swing.JMenu();
+        mFileNewGame = new javax.swing.JMenuItem();
         mFileExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,7 +93,15 @@ public class Score extends javax.swing.JFrame {
 
         mFile.setText("File");
 
-        mFileExit.setText("jMenuItem1");
+        mFileNewGame.setText("mFileNewGame");
+        mFileNewGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mFileNewGameActionPerformed(evt);
+            }
+        });
+        mFile.add(mFileNewGame);
+
+        mFileExit.setText("mFileExit");
         mFileExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mFileExitActionPerformed(evt);
@@ -140,6 +151,14 @@ public class Score extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_mFileExitActionPerformed
 
+    private void mFileNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFileNewGameActionPerformed
+        ControlGuiSimulation.startNewGame();
+        ShareSimulation sim = new ShareSimulation();
+        sim.setLocationRelativeTo(null);
+        sim.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mFileNewGameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -182,6 +201,7 @@ public class Score extends javax.swing.JFrame {
     private javax.swing.JLabel lScore;
     private javax.swing.JMenu mFile;
     private javax.swing.JMenuItem mFileExit;
+    private javax.swing.JMenuItem mFileNewGame;
     private javax.swing.JTextArea txtAreaScores;
     // End of variables declaration//GEN-END:variables
 }

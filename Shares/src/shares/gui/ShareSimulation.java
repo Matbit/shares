@@ -71,6 +71,7 @@ public class ShareSimulation extends javax.swing.JFrame {
         //menu
         mFile.setText(bundle.getString("mFile"));
         mFileExit.setText(bundle.getString("mFileExit"));
+        mFileNewGame.setText(bundle.getString("mFileNewGame"));
                 
     }
     
@@ -138,6 +139,7 @@ public class ShareSimulation extends javax.swing.JFrame {
         lInterestValue = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mFile = new javax.swing.JMenu();
+        mFileNewGame = new javax.swing.JMenuItem();
         mFileExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -365,7 +367,15 @@ public class ShareSimulation extends javax.swing.JFrame {
 
         mFile.setText("File");
 
-        mFileExit.setText("jMenuItem1");
+        mFileNewGame.setText("mFileNewGame");
+        mFileNewGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mFileNewGameActionPerformed(evt);
+            }
+        });
+        mFile.add(mFileNewGame);
+
+        mFileExit.setText("jMenuItem1-Exit");
         mFileExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mFileExitActionPerformed(evt);
@@ -636,6 +646,11 @@ public class ShareSimulation extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnPayOutActionPerformed
 
+    private void mFileNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFileNewGameActionPerformed
+        ControlGuiSimulation.startNewGame();
+        refreshData();
+    }//GEN-LAST:event_mFileNewGameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -709,6 +724,7 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JList<String> listSaveAccount;
     private javax.swing.JMenu mFile;
     private javax.swing.JMenuItem mFileExit;
+    private javax.swing.JMenuItem mFileNewGame;
     private javax.swing.JRadioButton rbtnA;
     private javax.swing.JRadioButton rbtnB;
     // End of variables declaration//GEN-END:variables
