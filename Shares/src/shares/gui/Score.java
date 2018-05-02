@@ -14,12 +14,7 @@ public class Score extends javax.swing.JFrame {
     
     public Score() {
         initComponents();
-        this.setTitle(bundle.getString("title"));
-        setLanguage();
-        mFile.setText(bundle.getString("mFile"));
-        mFileExit.setText(bundle.getString("mFileExit"));
-        mFileNewGame.setText(bundle.getString("mFileNewGame"));
-        
+        setLanguage();              
         setStatistics();
     }
     
@@ -29,6 +24,14 @@ public class Score extends javax.swing.JFrame {
         
         lScore.setText(bundle.getString("lScore"));
         btnExit.setText(bundle.getString("btnExit"));
+        mOptions.setText(bundle.getString("mOptions"));
+        mOptionsLanguageEn.setText(bundle.getString("mOptionsLanguageEn"));
+        mOptionsLanguageDe.setText(bundle.getString("mOptionsLanguageDe"));
+        setStatistics();
+        this.setTitle(bundle.getString("title"));
+        mFile.setText(bundle.getString("mFile"));
+        mFileExit.setText(bundle.getString("mFileExit"));
+        mFileNewGame.setText(bundle.getString("mFileNewGame"));
     }
     
     private void setStatistics(){
@@ -64,6 +67,9 @@ public class Score extends javax.swing.JFrame {
         mFile = new javax.swing.JMenu();
         mFileNewGame = new javax.swing.JMenuItem();
         mFileExit = new javax.swing.JMenuItem();
+        mOptions = new javax.swing.JMenu();
+        mOptionsLanguageEn = new javax.swing.JMenuItem();
+        mOptionsLanguageDe = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -110,6 +116,26 @@ public class Score extends javax.swing.JFrame {
         mFile.add(mFileExit);
 
         jMenuBar1.add(mFile);
+
+        mOptions.setText("mOptions");
+
+        mOptionsLanguageEn.setText("mOptionsLanguageEn");
+        mOptionsLanguageEn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mOptionsLanguageEnActionPerformed(evt);
+            }
+        });
+        mOptions.add(mOptionsLanguageEn);
+
+        mOptionsLanguageDe.setText("mOptionsLanguageDe");
+        mOptionsLanguageDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mOptionsLanguageDeActionPerformed(evt);
+            }
+        });
+        mOptions.add(mOptionsLanguageDe);
+
+        jMenuBar1.add(mOptions);
 
         setJMenuBar(jMenuBar1);
 
@@ -159,6 +185,16 @@ public class Score extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_mFileNewGameActionPerformed
 
+    private void mOptionsLanguageEnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mOptionsLanguageEnActionPerformed
+         Language.setLanguage(Language.aLanguage.ENGLISH);
+         setLanguage();
+    }//GEN-LAST:event_mOptionsLanguageEnActionPerformed
+
+    private void mOptionsLanguageDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mOptionsLanguageDeActionPerformed
+         Language.setLanguage(Language.aLanguage.GERMAN);
+         setLanguage();
+    }//GEN-LAST:event_mOptionsLanguageDeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -202,6 +238,9 @@ public class Score extends javax.swing.JFrame {
     private javax.swing.JMenu mFile;
     private javax.swing.JMenuItem mFileExit;
     private javax.swing.JMenuItem mFileNewGame;
+    private javax.swing.JMenu mOptions;
+    private javax.swing.JMenuItem mOptionsLanguageDe;
+    private javax.swing.JMenuItem mOptionsLanguageEn;
     private javax.swing.JTextArea txtAreaScores;
     // End of variables declaration//GEN-END:variables
 }

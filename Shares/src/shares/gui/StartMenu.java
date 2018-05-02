@@ -119,6 +119,11 @@ public class StartMenu extends javax.swing.JFrame {
                 rbtnEnglishItemStateChanged(evt);
             }
         });
+        rbtnEnglish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnEnglishActionPerformed(evt);
+            }
+        });
 
         rbtnGerman.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         rbtnGerman.setForeground(new java.awt.Color(0, 153, 255));
@@ -325,6 +330,10 @@ public class StartMenu extends javax.swing.JFrame {
         }
         setLanguage();
     }//GEN-LAST:event_rbtnGermanItemStateChanged
+
+    private void rbtnEnglishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnEnglishActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtnEnglishActionPerformed
     //nickname has to be longer than two chars
     private boolean nickCountChars(){
         

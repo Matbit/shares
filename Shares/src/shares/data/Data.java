@@ -191,7 +191,7 @@ public class Data {
         days += i;
     }
     public static void reCountDays(){
-        days = 0;
+        days = 1;
     }
     
     

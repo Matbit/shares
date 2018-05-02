@@ -72,6 +72,10 @@ public class ShareSimulation extends javax.swing.JFrame {
         mFile.setText(bundle.getString("mFile"));
         mFileExit.setText(bundle.getString("mFileExit"));
         mFileNewGame.setText(bundle.getString("mFileNewGame"));
+        mOptions.setText(bundle.getString("mOptions"));
+        mOptionsLanguageEn.setText(bundle.getString("mOptionsLanguageEn"));
+        mOptionsLanguageDe.setText(bundle.getString("mOptionsLanguageDe"));
+        
                 
     }
     
@@ -141,6 +145,9 @@ public class ShareSimulation extends javax.swing.JFrame {
         mFile = new javax.swing.JMenu();
         mFileNewGame = new javax.swing.JMenuItem();
         mFileExit = new javax.swing.JMenuItem();
+        mOptions = new javax.swing.JMenu();
+        mOptionsLanguageEn = new javax.swing.JMenuItem();
+        mOptionsLanguageDe = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -384,6 +391,26 @@ public class ShareSimulation extends javax.swing.JFrame {
         mFile.add(mFileExit);
 
         jMenuBar1.add(mFile);
+
+        mOptions.setText("mOptions");
+
+        mOptionsLanguageEn.setText("mOptionsLanguageEn");
+        mOptionsLanguageEn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mOptionsLanguageEnActionPerformed(evt);
+            }
+        });
+        mOptions.add(mOptionsLanguageEn);
+
+        mOptionsLanguageDe.setText("mOptionsLanguageDe");
+        mOptionsLanguageDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mOptionsLanguageDeActionPerformed(evt);
+            }
+        });
+        mOptions.add(mOptionsLanguageDe);
+
+        jMenuBar1.add(mOptions);
 
         setJMenuBar(jMenuBar1);
 
@@ -651,6 +678,16 @@ public class ShareSimulation extends javax.swing.JFrame {
         refreshData();
     }//GEN-LAST:event_mFileNewGameActionPerformed
 
+    private void mOptionsLanguageEnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mOptionsLanguageEnActionPerformed
+        Language.setLanguage(Language.aLanguage.ENGLISH);
+        setLanguage();
+    }//GEN-LAST:event_mOptionsLanguageEnActionPerformed
+
+    private void mOptionsLanguageDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mOptionsLanguageDeActionPerformed
+        Language.setLanguage(Language.aLanguage.GERMAN);
+        setLanguage();
+    }//GEN-LAST:event_mOptionsLanguageDeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -725,6 +762,9 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JMenu mFile;
     private javax.swing.JMenuItem mFileExit;
     private javax.swing.JMenuItem mFileNewGame;
+    private javax.swing.JMenu mOptions;
+    private javax.swing.JMenuItem mOptionsLanguageDe;
+    private javax.swing.JMenuItem mOptionsLanguageEn;
     private javax.swing.JRadioButton rbtnA;
     private javax.swing.JRadioButton rbtnB;
     // End of variables declaration//GEN-END:variables

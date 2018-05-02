@@ -32,6 +32,29 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="mOptions">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="mOptions"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mOptionsLanguageEn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="mOptionsLanguageEn"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mOptionsLanguageEnActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mOptionsLanguageDe">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="mOptionsLanguageDe"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mOptionsLanguageDeActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
       </SubComponents>
     </Menu>
   </NonVisualComponents>
