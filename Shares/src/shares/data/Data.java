@@ -144,4 +144,30 @@ public class Data {
     }
     
     
+    //Saving Account Data
+    private static ArrayList savAcc = new ArrayList();
+    
+    public static double getCurrentSavAcc(){
+        int i = savAcc.size();
+        return (double) savAcc.get(i-1);
+    }
+    
+    public static void addSavAcc(double amount){
+        savAcc.add(amount);
+        
+    }
+    
+    //Save interest rate list
+    private static ArrayList interestRate = new ArrayList();
+    
+    public static double getCurrentInterestRate(){
+        int i = interestRate.size();
+        return (double) interestRate.get(i-1);
+    }
+    
+    public static void addInterestRate(double rate){
+        interestRate.add(rate);
+    }
+    
+    
 }

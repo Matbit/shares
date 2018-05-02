@@ -86,10 +86,10 @@
                           <Component id="btnExit" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnStart" min="-2" max="-2" attributes="0"/>
-                          <Component id="lChooseGender" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="99" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane1" pref="99" max="32767" attributes="0"/>
+                          <Component id="btnStart" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lChooseGender" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

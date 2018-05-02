@@ -4,6 +4,8 @@ public class StartValues {
     
     private static double startCapital = 5000.00;
     private static int holding = 0;
+    private static double startSaveAccount = 0.0;
+    private static double startInterestRate = 3.5;
 
     /**
      * @return the startCapital
@@ -20,6 +22,14 @@ public class StartValues {
             startCapital = aStartCapital;
         }
         else startCapital = 2000.00;
+    }
+    
+    public static void setStartSaveAccount(){
+        Data.addSavAcc(startSaveAccount);
+    }
+    
+    public static void setStartInterestRate(){
+        Data.addInterestRate(startInterestRate);
     }
 
     /**
