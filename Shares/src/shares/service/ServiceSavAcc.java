@@ -7,7 +7,7 @@ public class ServiceSavAcc {
    
     public static void calcSavNewRound(double interestRate){
         double savAcc = Data.getCurrentSavAcc();
-        double profit = (((savAcc/100)* interestRate)/360);
+        double profit = (((savAcc/100)* interestRate)/360*100);
         Data.addSavAcc(savAcc + profit);
     }
     
