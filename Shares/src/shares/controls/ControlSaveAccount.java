@@ -11,7 +11,7 @@ public class ControlSaveAccount {
     }
     
     public static String getInterestProcent(){
-        return Data.getCurrentInterestRate()+"%";
+        return formatInProcent(Data.getCurrentInterestRate());
     }
     
     public static boolean processAddAmountToSaveAcc(String sAmount){
@@ -47,14 +47,13 @@ public class ControlSaveAccount {
     }
     
     
-    
-    
-    
-    
-    
-    
+        
     private static String formatInEuro(double d){
         DecimalFormat f = new DecimalFormat("#0.00€");
+        return f.format(d);
+     }
+    private static String formatInProcent(double d){
+        DecimalFormat f = new DecimalFormat("#0.00%");
         return f.format(d);
      }
     

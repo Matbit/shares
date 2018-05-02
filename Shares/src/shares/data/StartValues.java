@@ -5,7 +5,7 @@ public class StartValues {
     private static double startCapital = 5000.00;
     private static int holding = 0;
     private static double startSaveAccount = 0.0;
-    private static double startInterestRate = 3.5;
+    private static double startInterestRate = 0.035;
 
     /**
      * @return the startCapital

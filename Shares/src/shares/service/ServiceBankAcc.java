@@ -21,7 +21,7 @@ public class ServiceBankAcc {
     }
     
     public static double getTotalFortune(){
-        return calcCurrentPortfolio()+ Data.getCurrentBankAcc();
+        return calcCurrentPortfolio()+ Data.getCurrentBankAcc()+Data.getCurrentSavAcc();
     }
     
     public static double getDiffFortune(){

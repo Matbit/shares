@@ -1,6 +1,7 @@
 package shares.controls;
 
 import shares.data.Data;
+import shares.service.ServiceSavAcc;
 
 public class ControlGuiSimulation {
     
@@ -24,6 +25,8 @@ public class ControlGuiSimulation {
         //set new rate
         ControlShare.setAShareRate();
         ControlShare.setBShareRate();
+        ServiceSavAcc.calcSavNewRound(Data.getCurrentInterestRate());
+        ServiceSavAcc.calcNewInterestRate();
         
     }
     
