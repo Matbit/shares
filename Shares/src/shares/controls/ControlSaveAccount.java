@@ -33,17 +33,32 @@ public class ControlSaveAccount {
         
         double amount = Double.parseDouble(sAmount);
         
-        if(amount > Data.getCurrentSavAcc()){
+        if(amount > Data.getCurrentSavAcc() && amount < 51){
+            
+            if(Data.getCurrentSavAcc()> 0){
+                
+                double oldSave = Data.getCurrentSavAcc();
+                double oldBank = Data.getCurrentBankAcc();        
+                Data.addSavAcc(0);
+                Data.addBankAcc(oldBank + oldSave);
+                return true;
+            }
             return false;
         }
-        
+        else if(amount > Data.getCurrentSavAcc()){
+                return false;
+        }
+        calcNewSaveAcc(amount);
+        return true;
+    
+    }
+    
+    private static void calcNewSaveAcc(double amount){
         double oldSave = Data.getCurrentSavAcc();
         double oldBank = Data.getCurrentBankAcc();
         
         Data.addSavAcc(oldSave - amount);
         Data.addBankAcc(oldBank + amount);
-        return true;
-        
     }
     
     
