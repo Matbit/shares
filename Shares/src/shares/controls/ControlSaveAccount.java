@@ -10,6 +10,10 @@ public class ControlSaveAccount {
         return formatInEuro(Data.getCurrentSavAcc());
     }
     
+    public static String getInterestProcent(){
+        return Data.getCurrentInterestRate()+"%";
+    }
+    
     public static boolean processAddAmountToSaveAcc(String sAmount){
         
         double amount = Double.parseDouble(sAmount);
