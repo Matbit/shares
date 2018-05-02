@@ -39,7 +39,6 @@ public class Share {
         }
         companyList.add(firstTry);
         
-                
         String[] company = new String[8];
         company[0] = "Airplane Inc.";
         company[1] = "Motorsport Company";

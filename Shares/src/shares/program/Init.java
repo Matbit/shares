@@ -18,6 +18,7 @@ class Init {
         Data.addCountShareB(StartValues.getHolding());
         StartValues.setStartSaveAccount();
         StartValues.setStartInterestRate();
+        StartValues.setTime();
         
         StartMenu start = new StartMenu();
         start.setTitle(bundle.getString("title"));

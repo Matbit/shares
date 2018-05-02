@@ -1,5 +1,6 @@
 package shares.data;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import shares.model.Player;
@@ -168,6 +169,29 @@ public class Data {
     public static void addInterestRate(double rate){
         interestRate.add(rate);
     }
+    
+    //Save date
+    private static LocalDate gameTime;
+    
+    public static LocalDate getDateTime(){
+        return gameTime;
+    }
+    public static void setDateTime(LocalDate time){
+        gameTime = time;
+        setDays(1);
+    }
+    
+    //save days
+    private static int days;
+    public static int getDays(){
+        return days;
+    }
+    //days are counted atomatically
+    private static void setDays(int i){
+        days += i;
+    }
+    
+    
     
     
 }

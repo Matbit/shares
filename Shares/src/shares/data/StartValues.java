@@ -1,5 +1,8 @@
 package shares.data;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 public class StartValues {
     
     private static double startCapital = 5000.00;
@@ -47,6 +50,11 @@ public class StartValues {
             holding = 0;
             else holding = aHolding;
             
+    }
+    
+    public static void setTime(){
+        LocalDate startTime = LocalDate.now();
+        Data.setDateTime(LocalDate.of(startTime.getYear(), Month.JANUARY, 1));
     }
     
 }

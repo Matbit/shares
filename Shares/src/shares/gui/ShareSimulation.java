@@ -18,7 +18,7 @@ public class ShareSimulation extends javax.swing.JFrame {
      */
     public ShareSimulation() {
         initComponents();
-        this.setTitle(bundle.getString("title"));
+        setTitle();
         setLanguage();
         lBankAccValue.setText(ControlBank.getBankAcc());
         lCompanyName.setText(ControlGuiSimulation.getCompanyName());
@@ -83,11 +83,12 @@ public class ShareSimulation extends javax.swing.JFrame {
         lCountBValue.setText(ControlGuiSimulation.getHoldShareB());
         lSavAccValue.setText(ControlSaveAccount.getSaveAccountValue());
         lInterestValue.setText(ControlSaveAccount.getInterestProcent());
+        setTitle();
                 
     }
     
     private void setTitle(){
-        //type code here
+        this.setTitle(bundle.getString("title") + "       " + ControlGuiSimulation.getCurrentDate());
     }
 
     /**

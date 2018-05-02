@@ -39,6 +39,8 @@ public class Score extends javax.swing.JFrame {
         txtAreaScores.append("\n");
         txtAreaScores.append(bundle.getString("txtProcent")+ " "+ControlGuiScore.getProcentProfit());
         txtAreaScores.append("\n");
+        txtAreaScores.append(bundle.getString("txtDays")+ " "+ControlGuiScore.getDays());
+        txtAreaScores.append("\n");
               
     }
         

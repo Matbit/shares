@@ -24,6 +24,10 @@ public class ControlGuiScore {
         return formatInProcent(ServiceBankAcc.getProcentTotal());
     }
     
+    public static String getDays(){
+        return Data.getDays()+"";
+    }
+    
     private static String formatInProcent(double d){
         DecimalFormat f = new DecimalFormat("#0.00%");
         return f.format(d);
