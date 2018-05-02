@@ -184,7 +184,6 @@
       </Properties>
       <Events>
         <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rbtnGermanItemStateChanged"/>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rbtnGermanMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lPlayer">

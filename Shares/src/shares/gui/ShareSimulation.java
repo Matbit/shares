@@ -85,6 +85,10 @@ public class ShareSimulation extends javax.swing.JFrame {
         lInterestValue.setText(ControlSaveAccount.getInterestProcent());
                 
     }
+    
+    private void setTitle(){
+        //type code here
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

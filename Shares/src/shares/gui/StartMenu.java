@@ -12,24 +12,7 @@ public class StartMenu extends javax.swing.JFrame {
     ResourceBundle bundle;
     DefaultListModel lmGender = new DefaultListModel();
     
-    /*
-    if(rbtnEnglish.isSelected()){
-            rbtnEnglish.setSelected(false);
-            rbtnGerman.setSelected(true);
-            Language.setLanguage(Language.aLanguage.GERMAN);
-            
-        }
-        else{
-            if(!rbtnEnglish.isSelected()){
-                rbtnEnglish.setSelected(true);
-                rbtnGerman.setSelected(false);
-                Language.setLanguage(Language.aLanguage.ENGLISH);
-                
-            }
-        }
-        setLanguage();
-    */
-    
+       
     /**
      * Creates new form StartMenu
      */
@@ -143,11 +126,6 @@ public class StartMenu extends javax.swing.JFrame {
         rbtnGerman.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 rbtnGermanItemStateChanged(evt);
-            }
-        });
-        rbtnGerman.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rbtnGermanMouseClicked(evt);
             }
         });
 
@@ -322,40 +300,13 @@ public class StartMenu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_mFileExitActionPerformed
 
-    private void rbtnGermanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnGermanMouseClicked
-        if(rbtnEnglish.isSelected()){
-            //rbtnEnglish.setSelected(false);
-           // rbtnGerman.setSelected(true);
-            Language.setLanguage(Language.aLanguage.ENGLISH);
-            System.out.println("german");
-            
-        }
-        else{
-            if(!rbtnEnglish.isSelected()){
-               // rbtnEnglish.setSelected(true);
-               // rbtnGerman.setSelected(false);
-                Language.setLanguage(Language.aLanguage.GERMAN);
-                
-            }
-        }
-        setLanguage();
-        
-        
-    }//GEN-LAST:event_rbtnGermanMouseClicked
-
     private void rbtnEnglishItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rbtnEnglishItemStateChanged
         if(rbtnEnglish.isSelected()){
-            //rbtnEnglish.setSelected(false);
-           // rbtnGerman.setSelected(true);
-            Language.setLanguage(Language.aLanguage.ENGLISH);
-            System.out.println("german");
-            
+           Language.setLanguage(Language.aLanguage.ENGLISH);                        
         }
         else{
             if(!rbtnEnglish.isSelected()){
-               // rbtnEnglish.setSelected(true);
-               // rbtnGerman.setSelected(false);
-                Language.setLanguage(Language.aLanguage.GERMAN);
+               Language.setLanguage(Language.aLanguage.GERMAN);
                 
             }
         }
@@ -364,17 +315,11 @@ public class StartMenu extends javax.swing.JFrame {
 
     private void rbtnGermanItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rbtnGermanItemStateChanged
         if(rbtnEnglish.isSelected()){
-            //rbtnEnglish.setSelected(false);
-           // rbtnGerman.setSelected(true);
-            Language.setLanguage(Language.aLanguage.GERMAN);
-            System.out.println("german");
-            
+            Language.setLanguage(Language.aLanguage.ENGLISH);                        
         }
         else{
             if(!rbtnEnglish.isSelected()){
-               // rbtnEnglish.setSelected(true);
-               // rbtnGerman.setSelected(false);
-                Language.setLanguage(Language.aLanguage.ENGLISH);
+                Language.setLanguage(Language.aLanguage.GERMAN);
                 
             }
         }
