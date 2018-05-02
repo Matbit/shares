@@ -33,6 +33,12 @@ public class ControlGuiSimulation {
         
     }
     
+    public static void new30rounds(){
+        for(int i = 0; i<=30;i++){
+            newRound();
+        }
+    }
+    
     //set datetime plus one day
     public static void calcNewDate(){
         LocalDate old = Data.getDateTime();

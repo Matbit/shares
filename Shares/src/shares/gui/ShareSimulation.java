@@ -67,7 +67,8 @@ public class ShareSimulation extends javax.swing.JFrame {
         btnPayOut.setText(bundle.getString("btnPayOut"));
         lInterestR.setText(bundle.getString("lInterestR"));
         lSaveAccount.setText(bundle.getString("lSaveAccount"));
-        
+        btnSim30Days.setText(bundle.getString("btnSim30Days"));
+                
         //menu
         mFile.setText(bundle.getString("mFile"));
         mFileExit.setText(bundle.getString("mFileExit"));
@@ -141,6 +142,7 @@ public class ShareSimulation extends javax.swing.JFrame {
         btnPayOut = new javax.swing.JButton();
         lInterestR = new javax.swing.JLabel();
         lInterestValue = new javax.swing.JLabel();
+        btnSim30Days = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mFile = new javax.swing.JMenu();
         mFileNewGame = new javax.swing.JMenuItem();
@@ -370,6 +372,15 @@ public class ShareSimulation extends javax.swing.JFrame {
         lInterestValue.setForeground(new java.awt.Color(0, 102, 204));
         lInterestValue.setText("lInterestValue");
 
+        btnSim30Days.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnSim30Days.setForeground(new java.awt.Color(0, 102, 204));
+        btnSim30Days.setText("btnSim30Days");
+        btnSim30Days.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSim30DaysActionPerformed(evt);
+            }
+        });
+
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
 
         mFile.setText("File");
@@ -479,16 +490,16 @@ public class ShareSimulation extends javax.swing.JFrame {
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addComponent(btnPayIn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(btnPayOut, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGap(37, 37, 37)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnAbort, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnEndGame, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGap(472, 472, 472)
-                                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(37, 37, 37)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(btnAbort, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(btnEndGame, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(btnNextRound, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(btnSim30Days, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                                                    .addComponent(btnNextRound, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+                                                .addGap(302, 302, 302)
+                                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
@@ -570,7 +581,9 @@ public class ShareSimulation extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnNextRound, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnPayOut, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnPayOut, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSim30Days, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -688,6 +701,11 @@ public class ShareSimulation extends javax.swing.JFrame {
         setLanguage();
     }//GEN-LAST:event_mOptionsLanguageDeActionPerformed
 
+    private void btnSim30DaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSim30DaysActionPerformed
+        ControlGuiSimulation.new30rounds();
+        refreshData();
+    }//GEN-LAST:event_btnSim30DaysActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -731,6 +749,7 @@ public class ShareSimulation extends javax.swing.JFrame {
     private javax.swing.JButton btnPayIn;
     private javax.swing.JButton btnPayOut;
     private javax.swing.JButton btnSell;
+    private javax.swing.JButton btnSim30Days;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
