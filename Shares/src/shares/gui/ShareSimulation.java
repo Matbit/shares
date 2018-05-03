@@ -93,7 +93,7 @@ public class ShareSimulation extends javax.swing.JFrame {
                 
     }
     
-    private void refreshData(){
+    public void refreshData(){
         lBankAccValue.setText(ControlBank.getBankAcc());
         lPortfolioValue.setText(ControlBank.getCurrentPortfolio());
         lCountAValue.setText(ControlGuiSimulation.getHoldShareA());

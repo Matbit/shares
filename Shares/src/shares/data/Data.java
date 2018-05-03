@@ -37,6 +37,10 @@ public class Data {
         aShareRate.add(rate);
     }
     
+    public static void clearListShareA(){
+        aShareRate.clear();
+    }
+    
     //Share B rate
     private static ArrayList bShareRate = new ArrayList();
     
@@ -69,6 +73,10 @@ public class Data {
         }
         
         bShareRate.add(rate);
+    }
+    
+    public static void clearListShareB(){
+        bShareRate.clear();
     }
     
       

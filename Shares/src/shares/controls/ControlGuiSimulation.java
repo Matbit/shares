@@ -3,6 +3,7 @@ package shares.controls;
 import java.time.LocalDate;
 import shares.data.Data;
 import shares.data.StartValues;
+import shares.gui.ShareSimulation;
 import shares.service.ServiceSavAcc;
 
 public class ControlGuiSimulation {
@@ -68,6 +69,9 @@ public class ControlGuiSimulation {
     //menu option -> New Game
     public static void startNewGame(){
         
+        Data.clearListShareA();
+        Data.clearListShareB();
+        
         Data.addBankAcc(StartValues.getStartCapital());
         Data.addCountShareA(StartValues.getHolding());
         Data.addCountShareB(StartValues.getHolding());
@@ -75,6 +79,11 @@ public class ControlGuiSimulation {
         StartValues.setStartInterestRate();
         StartValues.setTime();
         Data.reCountDays();
+        
+        ControlGuiStart.createShares();
+        
+        ShareSimulation sim = ShareSimulation.getInstance();
+        sim.refreshData();
         
     }
     
