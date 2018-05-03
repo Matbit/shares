@@ -33,6 +33,37 @@ public class ControlShare {
          double newRate = ServiceValueCalculation.calcNewRateB(getBShareAsDouble());
          Data.addBShareRate(newRate);
      }
+     
+     //check if share is busted
+     public static boolean isBBusted(){
+         if(Data.getCurrentBShare() < 0.01){
+             return true;
+         }
+         else return false;
+     }
+     
+     public static boolean isABusted(){
+         if(Data.getCurrentAShare() < 0.01){
+             return true;
+         }
+         else return false;
+     }
+     
+     //0 = A , 1 = B
+     public static void cleanBustedShare(int bustedShare){
+        int hold;
+                
+         if(bustedShare == 0){
+             Data.addCountShareA(0);
+        } 
+        if(bustedShare == 1){
+            Data.addCountShareB(0);
+        }
+        
+         
+         
+     }
+     
           
      private static String formatInEuro(double d){
         DecimalFormat f = new DecimalFormat("#0.00€");

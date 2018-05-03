@@ -11,8 +11,7 @@ public class Share {
     public Share(){
         marketValue = initStartValue();
         name = setName();
-        //TO DO: clear 
-        System.out.println(name);
+        
     }
     
     private double initStartValue(){
@@ -27,9 +26,7 @@ public class Share {
     private String setName(){
         
         int firstTry = (int) (Math.random() * 8);
-        //TO DO clear
-        System.out.println(firstTry);
-        
+                
         //check whether company still exists
         if(!companyList.isEmpty()){
             for(int saveFirst = firstTry; saveFirst==firstTry;){

@@ -9,6 +9,7 @@ import shares.data.Data;
 import shares.program.settings.Language;
 
 public class ShareSimulation extends javax.swing.JFrame {
+    static private ShareSimulation aShareSimulation;
     
     String baseName = Language.getLanguage();
     ResourceBundle bundle = ResourceBundle.getBundle(baseName);
@@ -16,7 +17,7 @@ public class ShareSimulation extends javax.swing.JFrame {
     /**
      * Creates new form ShareSimulation
      */
-    public ShareSimulation() {
+    private ShareSimulation() {
         initComponents();
         setTitle();
         setLanguage();
@@ -47,11 +48,23 @@ public class ShareSimulation extends javax.swing.JFrame {
         buttonGroup1.add(rbtnA);
         buttonGroup1.add(rbtnB);
         
+        //hide
+        btnEndGame.setVisible(false);
+        
+    }
+    
+    static public ShareSimulation getInstance(){
+        if(aShareSimulation == null){
+            aShareSimulation = new ShareSimulation();
+        }
+        return aShareSimulation;
     }
     
     private void setLanguage(){
         baseName= Language.getLanguage();
         bundle = ResourceBundle.getBundle(baseName);
+        
+        setTitle();
         
         lBankAcc.setText(bundle.getString("lBankAcc"));
         lPortfolio.setText(bundle.getString("lPortfolio"));
@@ -94,7 +107,8 @@ public class ShareSimulation extends javax.swing.JFrame {
     }
     
     private void setTitle(){
-        this.setTitle(bundle.getString("title") + "       " + ControlGuiSimulation.getCurrentDate());
+        this.setTitle(bundle.getString("title") + "             " + Data.getAPlayer().getNickname().toUpperCase()  
+                + ":      "+ControlGuiSimulation.getCurrentDate());
     }
 
     /**

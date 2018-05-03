@@ -45,8 +45,7 @@ public class ServiceValueCalculation {
     private static double calcRate (){
         
         double rate = (int) (Math.random()*100);
-        System.out.println("Procent: "+rate);
-            
+                    
         if(rate < 5){
             return rate*0.05/100;
 			}

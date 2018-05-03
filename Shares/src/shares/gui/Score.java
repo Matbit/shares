@@ -24,6 +24,7 @@ public class Score extends javax.swing.JFrame {
         
         lScore.setText(bundle.getString("lScore"));
         btnExit.setText(bundle.getString("btnExit"));
+        btnBack.setText(bundle.getString("btnBack"));
         mOptions.setText(bundle.getString("mOptions"));
         mOptionsLanguageEn.setText(bundle.getString("mOptionsLanguageEn"));
         mOptionsLanguageDe.setText(bundle.getString("mOptionsLanguageDe"));
@@ -32,6 +33,7 @@ public class Score extends javax.swing.JFrame {
         mFile.setText(bundle.getString("mFile"));
         mFileExit.setText(bundle.getString("mFileExit"));
         mFileNewGame.setText(bundle.getString("mFileNewGame"));
+        
     }
     
     private void setStatistics(){
@@ -63,6 +65,7 @@ public class Score extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaScores = new javax.swing.JTextArea();
         btnExit = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mFile = new javax.swing.JMenu();
         mFileNewGame = new javax.swing.JMenuItem();
@@ -92,6 +95,13 @@ public class Score extends javax.swing.JFrame {
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
+            }
+        });
+
+        btnBack.setText("btnBack");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
             }
         });
 
@@ -144,14 +154,17 @@ public class Score extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(95, 95, 95)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lScore, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(76, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnExit)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lScore, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 66, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnExit)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -162,7 +175,9 @@ public class Score extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addComponent(btnExit)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnExit)
+                    .addComponent(btnBack))
                 .addContainerGap())
         );
 
@@ -179,7 +194,7 @@ public class Score extends javax.swing.JFrame {
 
     private void mFileNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFileNewGameActionPerformed
         ControlGuiSimulation.startNewGame();
-        ShareSimulation sim = new ShareSimulation();
+        ShareSimulation sim = ShareSimulation.getInstance();
         sim.setLocationRelativeTo(null);
         sim.setVisible(true);
         this.dispose();
@@ -194,6 +209,12 @@ public class Score extends javax.swing.JFrame {
          Language.setLanguage(Language.aLanguage.GERMAN);
          setLanguage();
     }//GEN-LAST:event_mOptionsLanguageDeActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        ShareSimulation sim = ShareSimulation.getInstance();
+        sim.setLocationRelativeTo(null);
+        sim.setVisible(true);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,6 +252,7 @@ public class Score extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnExit;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;

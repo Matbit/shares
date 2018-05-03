@@ -25,8 +25,23 @@ public class ControlGuiSimulation {
     
     public static void newRound(){
         //set new rate
-        ControlShare.setAShareRate();
-        ControlShare.setBShareRate();
+        boolean isABusted = ControlShare.isABusted();
+        
+        if(isABusted){
+            ControlShare.cleanBustedShare(0);
+        }
+        else if(!isABusted){
+            ControlShare.setAShareRate();
+        }
+        
+        boolean isBBusted = ControlShare.isBBusted();
+        if(isBBusted){
+            ControlShare.cleanBustedShare(1);
+            
+        }
+        else if(!isBBusted){
+            ControlShare.setBShareRate();
+        }
         ServiceSavAcc.calcSavNewRound(Data.getCurrentInterestRate());
         ServiceSavAcc.calcNewInterestRate();
         calcNewDate();

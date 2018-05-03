@@ -16,7 +16,10 @@ public class Data {
      */
     public static double getCurrentAShare(){
         int i = aShareRate.size();
-        
+        if((double)aShareRate.get(i-1) < 0.01){
+            return 0.00d;
+            
+        }
         return (double)aShareRate.get((i-1));
         
     }
@@ -26,6 +29,7 @@ public class Data {
         if(!aShareRate.isEmpty()){
         
             if(getCurrentAShare() < 0.01){
+            aShareRate.add(0.00);
             return;
             }
         }
@@ -42,7 +46,10 @@ public class Data {
      */
     public static double getCurrentBShare(){
         int i = bShareRate.size();
-        
+        if((double)bShareRate.get(i-1) < 0.01){
+            return 0.00d;
+            
+        }
         return (double)bShareRate.get((i-1));
         
     }
@@ -56,6 +63,7 @@ public class Data {
         if(!bShareRate.isEmpty()){
         
             if(getCurrentBShare() < 0.01){
+            bShareRate.add(0.00);
             return;
             }
         }
