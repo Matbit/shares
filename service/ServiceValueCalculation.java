@@ -15,14 +15,19 @@ public class ServiceValueCalculation {
     
     public static double shareManagementSystem(){
         ShareMode currentMode = mode;
+System.out.println(mode);//clear
         if(currentMode == ShareMode.NORMAL_MODE){
             return calcNormalMode();  
         }
         if(currentMode == ShareMode.POWER_MODE){
-            return calcPowerMode();
+            double newRate = calcPowerMode();
+            double oldRate = Data.getCurrentBShare();
+            return oldRate * newRate;
         }
         if(currentMode == ShareMode.SUICIDE_MODE){
-            return calcSuicideMode()*(-1);
+            double factor = calcSuicideMode();
+            double oldRate = Data.getCurrentBShare();
+            return oldRate * factor;
         }
         return 0d;
     }
@@ -33,6 +38,7 @@ public class ServiceValueCalculation {
         
         while(currentMode == newMode){
             double newTry = (int) (Math.random()*4);
+ System.out.println(newTry);
             if(newTry == 0){
                 newMode = ShareMode.SUICIDE_MODE;
             }
@@ -214,7 +220,7 @@ public class ServiceValueCalculation {
     }			
     
     private static double calcSuicideMode(){
-        int length = 5;
+        int length = 3;
         int periodDay = counter;
         
         //change mode if maximum is reached
@@ -234,34 +240,34 @@ public class ServiceValueCalculation {
         double rate = (int) (Math.random()*100);
         
         if(rate > 10){
-            return rate * 1.98/100;
+            return rate * 0.75/100;
         }
         if(rate > 20){
-            return rate*2.16/100;
+            return rate * 1.0/100;
         }
         if(rate > 30){
-            return rate*2.62/100;
+            return rate * 1.2/100;
         }
         if(rate > 40){
-            return rate *2.98/100;
+            return rate * 1.4/100;
         }
         if(rate > 50){
-            return rate*3.45/100;
+            return rate * 1.75/100;
         }
         if(rate > 60){
-            return rate*3.80/100;
+            return rate* 2.1/100;
         }
         if(rate > 70){
-            return rate *4.37/100;
+            return rate * 2.5/100;
         }
         if(rate > 80){
-            return rate * 5.83/100;
+            return rate * 2.7/100;
         }
         if(rate > 90){
-            return rate * 6.25/100;
+            return rate * 3.2/100;
         }
         if(rate > 89){
-            return rate * 6.8/100;
+            return rate * 4/100;
         }
         return rate;
         
