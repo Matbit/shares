@@ -23,10 +23,10 @@ public class ServiceValueCalculation {
         return 0d;
     }
     
-    private static double calcNormalMode(){
+    private static void calcNormalMode(){
         int length = 60;
         if(counter >= length){
-            return calcNewRateB(Data.getCurrentBShare());
+            //return calcNewRateB(Data.getCurrentBShare());
         }
         else if(counter < length){
             double newMode = (int) Math.random() * 100;

@@ -182,6 +182,11 @@ public class StartMenu extends javax.swing.JFrame {
         txtfieldNick.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtfieldNick.setForeground(new java.awt.Color(0, 153, 255));
         txtfieldNick.setText("Joe");
+        txtfieldNick.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtfieldNickKeyPressed(evt);
+            }
+        });
 
         lException.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lException.setForeground(new java.awt.Color(204, 0, 0));
@@ -346,6 +351,16 @@ public class StartMenu extends javax.swing.JFrame {
     private void rbtnEnglishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnEnglishActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtnEnglishActionPerformed
+
+    private void txtfieldNickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfieldNickKeyPressed
+       //max length 15 letters       
+       if(txtfieldNick.getText() == null){
+           return;
+       }
+       if(txtfieldNick.getText().length()>= 15){
+           txtfieldNick.setText(txtfieldNick.getText().substring(0, 15));
+       }
+    }//GEN-LAST:event_txtfieldNickKeyPressed
     //nickname has to be longer than two chars
     private boolean nickCountChars(){
         
