@@ -5,6 +5,8 @@ import shares.model.Share;
 
 public class ServiceValueCalculation {
     private static int counter = 0;
+    private static int maximumDays = 55;
+        
     private static ShareMode  mode = ShareMode.NORMAL_MODE;
     
     public enum ShareMode{
@@ -23,23 +25,28 @@ public class ServiceValueCalculation {
         return 0d;
     }
     
-    private static void calcNormalMode(){
+    private static double calcNormalMode(){
         int length = 60;
-        if(counter >= length){
-            //return calcNewRateB(Data.getCurrentBShare());
+        int periodDay = counter;
+        
+        //change mode if maximum is reached
+        if(periodDay >= length){
+            counter = 0;
+            //
         }
-        else if(counter < length){
-            double newMode = (int) Math.random() * 100;
-            if(newMode >= 50){
-                mode = ShareMode.POWER_MODE;
-                //call powerMethode
-                
-            }
-            else if(newMode < 51) {
-                mode = ShareMode.SUICIDE_MODE;
-                //call suicideMode
-            }
+        
+        //if first day in normal mode        
+        if(counter == 0){
+            calcModePeriod(length);
         }
+        //count +1
+        counter++;
+        
+        return calcNewRateB(Data.getCurrentBShare());
+    }
+    
+    private static void calcModePeriod(int maximum){
+        maximumDays = (int) Math.random()* maximum;
     }
     
     //calculate new share rate (a)
@@ -73,7 +80,7 @@ public class ServiceValueCalculation {
         //random decision - plus or minus
         double plusOrMinus = (int) (Math.random()*100);
         
-        if(plusOrMinus < 46)
+        if(plusOrMinus < 53)
             factor = 1;
         else
             factor = -1;
@@ -84,8 +91,7 @@ public class ServiceValueCalculation {
     
     private static double calcRate (){
         
-        
-        
+              
         double rate = (int) (Math.random()*100);
                     
         if(rate < 5){
