@@ -20,12 +20,12 @@ System.out.println(mode);//clear
             return calcNormalMode();  
         }
         if(currentMode == ShareMode.POWER_MODE){
-            double newRate = calcPowerMode();
+            double newRate = (100 + calcPowerMode())/100;
             double oldRate = Data.getCurrentBShare();
             return oldRate * newRate;
         }
         if(currentMode == ShareMode.SUICIDE_MODE){
-            double factor = calcSuicideMode();
+            double factor = (100 - calcSuicideMode())/100;
             double oldRate = Data.getCurrentBShare();
             return oldRate * factor;
         }
@@ -38,7 +38,7 @@ System.out.println(mode);//clear
         
         while(currentMode == newMode){
             double newTry = (int) (Math.random()*4);
- System.out.println(newTry);
+ System.out.println(newTry);//clear
             if(newTry == 0){
                 newMode = ShareMode.SUICIDE_MODE;
             }
@@ -255,7 +255,7 @@ System.out.println(mode);//clear
             return rate * 1.75/100;
         }
         if(rate > 60){
-            return rate* 2.1/100;
+            return rate * 2.1/100;
         }
         if(rate > 70){
             return rate * 2.5/100;
